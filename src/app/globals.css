@@ -1,0 +1,332 @@
+@import "tailwindcss";
+
+/* ============================================================
+   KRAXX STUDIO — design tokens
+   ------------------------------------------------------------
+   Signature: the logo mark is two angled chevrons cut into a K —
+   forward motion, a diagonal edge, no soft curves. That geometry
+   is the whole design language here: cards get one clipped
+   corner (never rounded), dividers are chevrons instead of
+   hairlines, and gradients sweep at a fixed 115° angle instead
+   of sitting behind blurred radial "spotlights." Brand hexes
+   below are locked to the logo — only how they're used changed.
+   ============================================================ */
+
+@layer base {
+  :root {
+    /* Brand palette — locked to the logo, do not change hexes */
+    --bg-dark: #0b0f19;
+    --bg-card: #1a1f2e;
+    --bg-card-elevated: #242b3f;
+    --ink: #f3f4f6;
+    --accent-blue: #4f46e5;
+    --accent-violet: #8b5cf6;
+    --accent-magenta: #d946ef;
+
+    /* Derived neutrals */
+    --text-primary: var(--ink);
+    --text-secondary: rgba(243, 244, 246, 0.68);
+    --text-tertiary: rgba(243, 244, 246, 0.42);
+    --border-subtle: rgba(243, 244, 246, 0.09);
+    --border-strong: rgba(243, 244, 246, 0.18);
+
+    /* The signature sweep — always this angle, never radial */
+    --brand-sweep: linear-gradient(115deg, var(--accent-blue) 0%, var(--accent-violet) 55%, var(--accent-magenta) 100%);
+    --brand-sweep-soft: linear-gradient(115deg, rgba(79, 70, 229, 0.16) 0%, rgba(139, 92, 246, 0.12) 55%, rgba(217, 70, 239, 0.10) 100%);
+
+    /* The signature cut — one corner clipped like the K mark, never all four rounded */
+    --cut-sm: 14px;
+    --cut-md: 22px;
+    --cut-lg: 34px;
+
+    /* Type scale */
+    --font-display: var(--font-display-face, "Space Grotesk"), var(--font-geist-sans), system-ui, sans-serif;
+    --font-body: var(--font-body-face, "Inter"), var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+    --font-mono: var(--font-mono-face, "IBM Plex Mono"), var(--font-geist-mono), ui-monospace, monospace;
+
+    --shadow-card: 0 24px 60px -20px rgba(11, 15, 25, 0.65);
+    --shadow-lift: 0 30px 80px -24px rgba(79, 70, 229, 0.35);
+  }
+
+  body {
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  .font-display {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+
+  .font-mono,
+  .eyebrow,
+  .kx-divider span {
+    font-family: var(--font-mono);
+  }
+
+  ::selection {
+    background-color: rgba(139, 92, 246, 0.35);
+    color: #ffffff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent-violet);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+}
+
+/* ============================================================
+   Signature surfaces — the K-cut, used instead of glassmorphism
+   ============================================================ */
+
+/* Base card: one clipped corner (top-right), flat fill, thin
+   hairline border. No blur, no gradient fill — the cut carries
+   the brand instead of glow or glass. */
+.kx-card {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  clip-path: polygon(0 0, calc(100% - var(--cut-md)) 0, 100% var(--cut-md), 100% 100%, 0 100%);
+  transition: border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.kx-card:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-card);
+}
+
+/* The cut corner itself rendered as a thin brand-gradient seam,
+   so the clip reads as an intentional mark, not a CSS accident. */
+.kx-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: var(--cut-md);
+  height: var(--cut-md);
+  background: var(--brand-sweep);
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
+  opacity: 0.9;
+}
+
+/* Elevated variant for the one or two moments per page that
+   should carry more weight (pricing highlight, featured case
+   study) — still flat, just a stronger seam and fill. */
+.kx-card-elevated {
+  background: var(--bg-card-elevated);
+  border-color: var(--border-strong);
+}
+
+.kx-card-elevated::after {
+  width: var(--cut-lg);
+  height: var(--cut-lg);
+}
+
+/* Nav is the one place a blur is earned — it sits over moving
+   content, not over empty space. */
+.kx-nav {
+  background: rgba(11, 15, 25, 0.86);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+/* ============================================================
+   Type treatments
+   ============================================================ */
+
+/* Eyebrow label — mono, wide tracking, used above headings
+   instead of a numbered marker (nothing here is a sequence). */
+.eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent-violet);
+}
+
+.text-gradient {
+  background: var(--brand-sweep);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Reserve the glow for the single wordmark moment in the hero —
+   not applied to body copy or repeated headings. */
+.glow-mark {
+  text-shadow: 0 0 40px rgba(139, 92, 246, 0.45);
+}
+
+/* ============================================================
+   Chevron divider — replaces the generic hairline rule. Reads
+   as "K", not as a decorative line, and doubles as a directional
+   cue ("keep reading this way"). Markup:
+   <div class="kx-divider"><span>Section label</span></div>
+   ============================================================ */
+.kx-divider {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text-tertiary);
+}
+
+.kx-divider::before {
+  content: "";
+  width: 22px;
+  height: 10px;
+  flex: none;
+  background: var(--brand-sweep);
+  clip-path: polygon(0 0, 55% 0, 100% 50%, 55% 100%, 0 100%, 45% 50%);
+}
+
+.kx-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border-subtle);
+}
+
+/* ============================================================
+   Background treatment — directional sweep + fine grid, no
+   radial "spotlight" blob (that's the generic default).
+   ============================================================ */
+.kx-field {
+  position: relative;
+  background-color: var(--bg-dark);
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.028) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.028) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+.kx-field::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--brand-sweep-soft);
+  mask-image: linear-gradient(180deg, black, transparent 65%);
+  -webkit-mask-image: linear-gradient(180deg, black, transparent 65%);
+  pointer-events: none;
+}
+
+/* ============================================================
+   Buttons — the sweep as fill on primary only; everything else
+   stays flat so the one gradient button still reads as an accent
+   ============================================================ */
+.kx-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: var(--brand-sweep);
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 0 100%);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.kx-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lift);
+}
+
+.kx-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.5rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  background: transparent;
+  border: 1px solid var(--border-strong);
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 0 100%);
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.kx-btn-secondary:hover {
+  border-color: var(--accent-violet);
+  background: rgba(139, 92, 246, 0.08);
+}
+
+/* ============================================================
+   Marquee — kept (it's functionally fine), fades at the edges
+   with a mask instead of a hard cut
+   ============================================================ */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+.kx-marquee-mask {
+  mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+}
+
+/* ============================================================
+   Scrollbar
+   ============================================================ */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #090a0f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e2336;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-violet);
+}
+
+/* ============================================================
+   Reduced motion
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animate-marquee {
+    animation: none !important;
+  }
+
+  .kx-card:hover,
+  .kx-btn-primary:hover {
+    transform: none !important;
+  }
+}
