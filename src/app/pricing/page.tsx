@@ -12,15 +12,15 @@ const PRICING_TIERS = [
   {
     name: "STARTER",
     tagline: "For businesses building consistency & visual authority.",
-    rangeIndicator: "Proposal Basis / ~$2,500/mo",
+    rangeIndicator: "Proposal Basis / ~$399/mo",
     popular: false,
     badge: "FOUNDATION ENGINE",
     description: "Designed for growing brands that need a consistent publishing cadence, professional visual grid, and baseline channel management.",
     features: [
-      "2 Core Social Platforms (Instagram + LinkedIn or X)",
-      "12 High-Quality Formatted Posts per Month",
+      "4 Core Social Platforms (Instagram + LinkedIn or X)",
+      "15 High-Quality Formatted Posts per Month",
       "Monthly Content Calendar Architecture",
-      "Brand Visual Template Suite (Figma)",
+      "Brand Visual Template Suite",
       "Basic Comment Moderation & Triage",
       "Monthly Performance Report",
     ],
@@ -29,7 +29,7 @@ const PRICING_TIERS = [
   {
     name: "GROWTH",
     tagline: "For businesses focused on aggressive audience growth.",
-    rangeIndicator: "Proposal Basis / ~$5,000/mo",
+    rangeIndicator: "Proposal Basis / ~$699/mo",
     popular: true,
     badge: "MOST POPULAR",
     description: "Our flagship growth engine combining short-form video editing, carousel graphics, active community moderation, and personal branding.",
