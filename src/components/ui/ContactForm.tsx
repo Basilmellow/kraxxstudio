@@ -14,7 +14,7 @@ const SERVICES_OPTIONS = [
   "Other / Full Growth Package",
 ];
 
-const BUDGET_OPTIONS = ["Under $999 / mo", "$1k – $2.8k / mo", "$4k – $8k / mo", "$8k+ / mo"];
+const BUDGET_OPTIONS = ["Under $399 / mo", "$699 – $999 / mo", "$999 – $1499 / mo", "$1499+ / mo"];
 
 export function ContactForm() {
   const [formData, setFormData] = useState({
