@@ -51,11 +51,11 @@ export async function POST(req: NextRequest) {
       budget,
       // Honeypot field: real users never fill this in (it's hidden via CSS).
       // Bots that auto-fill every field will trip it.
-      company_website,
+      hp_field_x7q,
     } = body ?? {};
 
     // Silently pretend success to the bot so it doesn't learn to avoid this field.
-    if (company_website) {
+    if (hp_field_x7q) {
       return NextResponse.json({ ok: true });
     }
 
