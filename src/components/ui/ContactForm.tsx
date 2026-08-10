@@ -29,6 +29,9 @@ export function ContactForm() {
   const [selectedBudget, setSelectedBudget] = useState<string>("$5k – $10k / mo");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  // Honeypot: hidden from real users via CSS below. Bots that auto-fill
+  // every input tend to fill this too, letting the API silently drop them.
+  const [honeypot, setHoneypot] = useState("");
 
   const toggleService = (service: string) => {
     if (selectedServices.includes(service)) {
@@ -40,7 +43,7 @@ export function ContactForm() {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) {
       setErrorMessage("Please complete all required fields (Name, Email, Project description).");
@@ -50,10 +53,33 @@ export function ContactForm() {
     setErrorMessage("");
     setStatus("loading");
 
-    // Simulate backend transmission / lead submission integration point
-    setTimeout(() => {
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...formData,
+          services: selectedServices,
+          budget: selectedBudget,
+          company_website: honeypot,
+        }),
+      });
+
+      const data = await res.json().catch(() => ({}));
+
+      if (!res.ok) {
+        setErrorMessage(
+          data?.error || "Something went wrong sending your message. Please try again or email us directly."
+        );
+        setStatus("error");
+        return;
+      }
+
       setStatus("success");
-    }, 1200);
+    } catch {
+      setErrorMessage("Network error — please check your connection and try again, or email us directly.");
+      setStatus("error");
+    }
   };
 
   return (
@@ -101,6 +127,21 @@ export function ContactForm() {
               <h3 className="text-2xl sm:text-3xl font-extrabold text-white mt-1">
                 START THE CONVERSATION.
               </h3>
+            </div>
+
+            {/* Honeypot field — hidden from sighted users and screen readers,
+                left open for bots that blindly fill every input. */}
+            <div className="absolute -left-[9999px] w-px h-px overflow-hidden" aria-hidden="true">
+              <label htmlFor="company_website">Leave this field empty</label>
+              <input
+                id="company_website"
+                name="company_website"
+                type="text"
+                tabIndex={-1}
+                autoComplete="off"
+                value={honeypot}
+                onChange={(e) => setHoneypot(e.target.value)}
+              />
             </div>
 
             {errorMessage && (
