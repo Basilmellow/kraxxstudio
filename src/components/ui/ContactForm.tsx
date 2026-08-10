@@ -14,7 +14,10 @@ const SERVICES_OPTIONS = [
   "Other / Full Growth Package",
 ];
 
+<<<<<<< HEAD
 const BUDGET_OPTIONS = ["Under $399 / mo", "$699 – $999 / mo", "$999 – $1499 / mo", "$1499+ / mo"];
+=======
+>>>>>>> 2676baf (Add functional contact form with Resend)
 
 export function ContactForm() {
   const [formData, setFormData] = useState({
