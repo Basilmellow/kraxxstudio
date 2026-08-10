@@ -14,7 +14,7 @@ const SERVICES_OPTIONS = [
   "Other / Full Growth Package",
 ];
 
-const BUDGET_OPTIONS = ["$399 – $699 / mo", "$699 – $999 / mo", "$999 – $1499 / mo", "$1499+ / mo", "Project Proposal Basis"];
+const BUDGET_OPTIONS = ["Under $999 / mo", "$1k – $2.8k / mo", "$4k – $8k / mo", "$8k+ / mo"];
 
 export function ContactForm() {
   const [formData, setFormData] = useState({
@@ -26,7 +26,7 @@ export function ContactForm() {
   });
 
   const [selectedServices, setSelectedServices] = useState<string[]>(["Social Media Management"]);
-  const [selectedBudget, setSelectedBudget] = useState<string>("$5k – $10k / mo");
+  const [selectedBudget, setSelectedBudget] = useState<string>("$1k – $2.8k / mo");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
   // Honeypot: hidden from real users via CSS below. Bots that auto-fill
@@ -61,7 +61,7 @@ export function ContactForm() {
           ...formData,
           services: selectedServices,
           budget: selectedBudget,
-          company_website: honeypot,
+          hp_field_x7q: honeypot,
         }),
       });
 
@@ -130,12 +130,15 @@ export function ContactForm() {
             </div>
 
             {/* Honeypot field — hidden from sighted users and screen readers,
-                left open for bots that blindly fill every input. */}
-            <div className="absolute -left-[9999px] w-px h-px overflow-hidden" aria-hidden="true">
-              <label htmlFor="company_website">Leave this field empty</label>
+                left open for bots that blindly fill every input. Named and
+                styled to avoid browser autofill (Chrome will auto-populate
+                fields named like "company"/"website" even when off-screen
+                if they have a non-zero size). */}
+            <div className="absolute w-0 h-0 overflow-hidden opacity-0 pointer-events-none" aria-hidden="true">
+              <label htmlFor="hp_field_x7q">Leave this field empty</label>
               <input
-                id="company_website"
-                name="company_website"
+                id="hp_field_x7q"
+                name="hp_field_x7q"
                 type="text"
                 tabIndex={-1}
                 autoComplete="off"
