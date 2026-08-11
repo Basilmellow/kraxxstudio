@@ -18,8 +18,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_CONFIG.url),
-  title: {
-    default: `${SITE_CONFIG.name} — Digital Growth Studio`,
+
+  title: {    default: `${SITE_CONFIG.name} — Digital Growth Studio`,
     template: `%s | ${SITE_CONFIG.name} Digital Growth Studio`,
   },
   description: SITE_CONFIG.description,

@@ -8,6 +8,23 @@ import { ProcessSection } from "@/components/sections/ProcessSection";
 import { WhyUsSection } from "@/components/sections/WhyUsSection";
 import { BlogPreviewSection } from "@/components/sections/BlogPreviewSection";
 import { CTASection } from "@/components/sections/CTASection";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Social Media Marketing & Digital Growth Agency",
+  description:
+    "KRAXX Studio helps brands grow through social media management, content strategy, community management, personal branding, and paid social.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "KRAXX Studio | Social Media Marketing & Digital Growth",
+    description:
+      "Social media marketing, content strategy, community management, personal branding, and digital growth by KRAXX Studio.",
+    url: "https://kraxxstudio.com/",
+    type: "website",
+  },
+}; 
 
 export default function HomePage() {
   return (
