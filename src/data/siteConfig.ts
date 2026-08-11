@@ -3,7 +3,7 @@ export const SITE_CONFIG = {
   fullName: "KRAXX Digital Growth Studio",
   tagline: "Strategy. Content. Community. Growth.",
   subTagline: "Data-driven strategies that create real impact. Content that connects, engages, and converts.",
-  description: "KRAXX Studio is a premium digital growth agency. Content that connects, communities that engage, growth that compounds, and results that matter.",
+  description: "KRAXX Studio is a social media marketing and digital growth agency helping brands grow through social media management, content strategy, content creation, community management, personal branding, and paid social.",
   url: "https://kraxxstudio.com",
   ogImage: "https://kraxxstudio.com/og-image.png",
   twitterHandle: "@kraxxstudio",

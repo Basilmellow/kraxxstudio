@@ -23,9 +23,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!post) return { title: "Article Not Found" };
 
   return {
-    title: `${post.title} — ${SITE_CONFIG.name}`,
-    description: post.excerpt,
-    openGraph: {
+  title: `${post.title} | ${SITE_CONFIG.name}`,
+  description: post.seoDescription || post.excerpt,
+  alternates: {
+    canonical: `/blog/${post.slug}`,
+  },
+  openGraph: {
       title: post.title,
       description: post.excerpt,
       type: "article",

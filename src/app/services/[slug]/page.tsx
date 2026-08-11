@@ -17,19 +17,31 @@ export async function generateStaticParams() {
     slug: service.slug,
   }));
 }
-
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
   const { slug } = await params;
   const service = SERVICES_DATA.find((s) => s.slug === slug);
-  if (!service) return { title: "Service Not Found" };
+
+  if (!service) {
+    return {
+      title: `Service Not Found | ${SITE_CONFIG.name}`,
+    };
+  }
 
   return {
-    title: `${service.title} — ${SITE_CONFIG.name}`,
+    title: `${service.title} Services | ${SITE_CONFIG.name}`,
     description: service.summary,
+    alternates: {
+      canonical: `/services/${service.slug}`,
+    },
     openGraph: {
-      title: `${service.title} | ${SITE_CONFIG.fullName}`,
+      title: `${service.title} Services | ${SITE_CONFIG.fullName}`,
       description: service.summary,
       url: `${SITE_CONFIG.url}/services/${service.slug}`,
+      type: "website",
     },
   };
 }

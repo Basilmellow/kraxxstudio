@@ -7,8 +7,17 @@ import { CTASection } from "@/components/sections/CTASection";
 const cs = CASE_STUDIES[0];
 
 export const metadata: Metadata = {
-  title: `${cs.title} — KRAXX Case Study`,
+  title: `${cs.title} | KRAXX Social Media Case Study`,
   description: cs.subtitle,
+  alternates: {
+    canonical: "/work/instagram-zero-to-50k",
+  },
+  openGraph: {
+    title: `${cs.title} | KRAXX Social Media Case Study`,
+    description: cs.subtitle,
+    url: "https://kraxxstudio.com/work/instagram-zero-to-50k",
+    type: "article",
+  },
 };
 
 export default function InstagramCaseStudyPage() {

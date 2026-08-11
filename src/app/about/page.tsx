@@ -6,8 +6,12 @@ import { KraxxLogo } from "@/components/ui/KraxxLogo";
 import { SITE_CONFIG } from "@/data/siteConfig";
 
 export const metadata: Metadata = {
-  title: "About Studio — Philosophy & Capabilities",
-  description: `${SITE_CONFIG.name} helps ambitious companies build, manage, and scale their digital presence through strategy, content, community, and continuous data optimization.`,
+  title: "About KRAXX Studio | Social Media & Digital Growth Agency",
+  description:
+    "Learn how KRAXX Studio helps ambitious brands build stronger digital presence through social media strategy, content, community, and measurable growth.",
+  alternates: {
+    canonical: "/about",
+  },
 };
 
 export default function AboutPage() {

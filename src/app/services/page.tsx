@@ -5,10 +5,20 @@ import { SERVICES_DATA } from "@/data/services";
 import { CTASection } from "@/components/sections/CTASection";
 
 export const metadata: Metadata = {
-  title: "Core Services — Digital Growth Capabilities",
-  description: "Explore KRAXX digital growth studio capabilities: Social Media Management, Content Strategy, Content Creation, Community Management, Personal Branding, and Paid Social.",
+  title: "Social Media Marketing Services | KRAXX Studio",
+  description:
+    "Explore KRAXX Studio's social media marketing services, including social media management, content strategy, content creation, community management, personal branding, and paid social campaigns.",
+  alternates: {
+    canonical: "/services",
+  },
+  openGraph: {
+    title: "Social Media Marketing Services | KRAXX Studio",
+    description:
+      "Social media management, content strategy, content creation, community management, personal branding, and paid social services.",
+    url: "https://kraxxstudio.com/services",
+    type: "website",
+  },
 };
-
 export default function ServicesPage() {
   return (
     <div className="pt-28 pb-16 bg-slate-950 min-h-screen">

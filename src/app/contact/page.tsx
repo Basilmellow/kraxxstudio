@@ -4,8 +4,12 @@ import { ContactForm } from "@/components/ui/ContactForm";
 import { SITE_CONFIG } from "@/data/siteConfig";
 
 export const metadata: Metadata = {
-  title: "Start a Project — Lead Contact Hub",
-  description: "Initiate your digital growth project with KRAXX. Tell us your brand objectives and get a customized proposal.",
+  title: "Contact a Social Media Marketing Agency | KRAXX Studio",
+  description:
+    "Start a project with KRAXX Studio. Tell us your business goals and get a tailored social media marketing and digital growth proposal.",
+  alternates: {
+    canonical: "/contact",
+  },
 };
 
 export default function ContactPage() {

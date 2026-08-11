@@ -4,8 +4,12 @@ import { ArrowUpRight, CheckCircle2, Sparkles, Shield, Zap } from "lucide-react"
 import { CTASection } from "@/components/sections/CTASection";
 
 export const metadata: Metadata = {
-  title: "Pricing & Investment Plans — Digital Growth Retainers",
-  description: "Transparent, tiered retainer packages for social media management, content strategy, community management, and paid social campaigns.",
+  title: "Social Media Marketing Pricing | KRAXX Studio",
+  description:
+    "Explore KRAXX Studio's social media marketing and digital growth retainer plans for social media management, content, community management, personal branding, and paid social.",
+  alternates: {
+    canonical: "/pricing",
+  },
 };
 
 const PRICING_TIERS = [

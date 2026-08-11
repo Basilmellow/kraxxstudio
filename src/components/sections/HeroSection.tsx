@@ -42,7 +42,7 @@ export function HeroSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="mt-6 text-base sm:text-xl text-slate-300 max-w-2xl font-medium leading-relaxed"
         >
-          Data-driven strategies that create real impact. Content that connects, engages, and converts scrollers into loyal brand communities.
+          KRAXX Studio is a social media marketing and digital growth agency helping ambitious brands build stronger online presence through strategy, content, community, and measurable growth.
         </motion.p>
 
         {/* CTAs */}
