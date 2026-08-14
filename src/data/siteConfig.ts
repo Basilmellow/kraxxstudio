@@ -9,7 +9,7 @@ export const SITE_CONFIG = {
   twitterHandle: "@kraxxstudio",
   email: "kraxxstudio@gmail.com",
   location: "Global Digital Studio",
-  foundingYear: 2024,
+  foundingYear: 2026,
   brandEssence: [
     { title: "STRATEGIC", text: "Data-driven strategies that create real impact." },
     { title: "CREATIVE", text: "Content that connects, engages, and converts." },
@@ -23,7 +23,7 @@ export const SITE_CONFIG = {
   ],
   socialLinks: {
     instagram: "https://instagram.com/kraxxstudio",
-    linkedin: "https://instagram.com/kraxxstudio",
+    linkedin: "https://www.linkedin.com/company/kraxxstudio",
     twitter: "https://x.com/kraxxstudio",
     github: "https://instagram.com/kraxxstudio",
   },
