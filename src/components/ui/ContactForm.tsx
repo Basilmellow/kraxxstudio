@@ -26,7 +26,7 @@ export function ContactForm() {
   });
 
   const [selectedServices, setSelectedServices] = useState<string[]>(["Social Media Management"]);
-  const [selectedBudget, setSelectedBudget] = useState<string>("$1k – $2.8k / mo");
+  const [selectedBudget, setSelectedBudget] = useState<string>("Under $399 / mo");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
   // Honeypot: hidden from real users via CSS below. Bots that auto-fill
