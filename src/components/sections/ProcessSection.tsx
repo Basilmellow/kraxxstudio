@@ -1,104 +1,118 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Compass, Target, PenTool, Radio, BarChart2, RefreshCw } from "lucide-react";
+import { Compass, Search, Target, Palette, Rocket, RefreshCw, Cpu } from "lucide-react";
 
-const PROCESS_STEPS = [
+const ENGINE_STAGES = [
   {
     number: "01",
     title: "DISCOVER",
-    desc: "Understand the brand, target audience, competitors, and growth objectives through a dedicated audit.",
+    desc: "Understand the business model, commercial goals, audience segments, and digital positioning requirements.",
+    deliverable: "Strategic Kickoff Brief & Business Context Model",
     icon: Compass,
   },
   {
     number: "02",
-    title: "STRATEGIZE",
-    desc: "Build the content pillars, messaging architecture, and platform distribution strategy.",
-    icon: Target,
+    title: "AUDIT",
+    desc: "Identify digital weaknesses, website conversion friction, visual inconsistencies, and competitor gaps.",
+    deliverable: "Digital Presence Audit & Gap Analysis Deck",
+    icon: Search,
   },
   {
     number: "03",
-    title: "CREATE",
-    desc: "Develop short-form video cuts, carousel graphics, social copy, and paid campaign creatives.",
-    icon: PenTool,
+    title: "STRATEGIZE",
+    desc: "Build the growth architecture, messaging framework, content pillars, and technical roadmap.",
+    deliverable: "Studio Strategy Blueprint & Distribution Playbook",
+    icon: Target,
   },
   {
     number: "04",
-    title: "PUBLISH",
-    desc: "Manage day-to-day digital presence, scheduled releases, and proactive community management.",
-    icon: Radio,
+    title: "DESIGN",
+    desc: "Create the visual identity system, UX wireframes, editorial carousels, and creative asset templates.",
+    deliverable: "Brand Identity System & Figma Design Deck",
+    icon: Palette,
   },
   {
     number: "05",
-    title: "MEASURE",
-    desc: "Track retention rates, save velocity, audience growth metrics, and lead conversions.",
-    icon: BarChart2,
+    title: "DEPLOY",
+    desc: "Build high-performance web applications, launch channel operations, and publish content assets.",
+    deliverable: "Production Web Launch & Channel Operations Engine",
+    icon: Rocket,
   },
   {
     number: "06",
     title: "OPTIMIZE",
-    desc: "Use performance data to continuously refine pillars, hooks, and content production efficiency.",
+    desc: "Measure conversion analytics, user retention, search visibility, and continuously compound growth.",
+    deliverable: "Monthly Performance Retrospective & ROAS Tuning",
     icon: RefreshCw,
   },
 ];
 
 export function ProcessSection() {
   return (
-    <section id="process" className="py-24 sm:py-32 bg-slate-950 border-t border-white/10 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
-          <span className="text-xs font-mono tracking-widest text-indigo-400 uppercase font-semibold">
-            THE STUDIO WORKFLOW
-          </span>
-          <h2 className="text-3xl sm:text-5xl font-black text-white uppercase tracking-tight mt-2">
-            A BETTER WAY TO BUILD DIGITAL PRESENCE.
+    <section id="process" className="py-24 bg-bg-dark border-b border-white/10 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16">
+        
+        {/* Section Header */}
+        <div className="space-y-4 text-center max-w-3xl mx-auto">
+          <div className="eyebrow inline-flex items-center space-x-2">
+            <Cpu className="h-4 w-4 text-purple-400" />
+            <span>THE KRAXX DIGITAL SYSTEM</span>
+          </div>
+          <h2 className="text-3xl sm:text-5xl font-heading font-bold text-white tracking-tight uppercase">
+            THE KRAXX GROWTH ENGINE
           </h2>
-          <p className="text-sm text-slate-300 mt-4 leading-relaxed">
-            Our 6-stage operational pipeline guarantees consistency, quality control, and data accountability.
+          <p className="text-slate-400 text-base font-light">
+            Our 6-stage operational pipeline guarantees consistency, quality control, and measurable commercial results.
           </p>
         </div>
 
-        {/* 6-Step Process Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {PROCESS_STEPS.map((step, idx) => {
-            const Icon = step.icon;
+        {/* 6-Step Stage Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {ENGINE_STAGES.map((stage, idx) => {
+            const Icon = stage.icon;
             return (
               <motion.div
-                key={step.number}
-                initial={{ opacity: 0, y: 30 }}
+                key={stage.number}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="kx-card rounded-3xl p-8 border border-white/10 relative overflow-hidden group hover:border-indigo-500/40"
+                transition={{ duration: 0.5, delay: idx * 0.08 }}
+                className="kx-card p-8 border border-white/10 space-y-6 group hover:border-purple-500/50 flex flex-col justify-between"
               >
-                <div className="flex items-center justify-between mb-6">
-                  <span className="text-3xl font-black font-mono text-indigo-400 group-hover:text-cyan-300 transition-colors">
-                    {step.number}
-                  </span>
-                  <div className="w-10 h-10 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 group-hover:bg-indigo-600 group-hover:text-white transition-all shadow-md">
-                    <Icon className="w-5 h-5" />
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between border-b border-white/10 pb-4">
+                    <span className="font-mono text-2xl font-bold text-purple-400 group-hover:text-purple-300 transition-colors">
+                      {stage.number}
+                    </span>
+                    <div className="w-10 h-10 rounded-xl bg-bg-dark border border-white/10 flex items-center justify-center text-slate-300 group-hover:border-purple-500/50 group-hover:text-purple-300 transition-all shadow-md">
+                      <Icon className="w-5 h-5" />
+                    </div>
                   </div>
+
+                  <h3 className="text-xl font-heading font-bold text-white tracking-wide uppercase">
+                    {stage.title}
+                  </h3>
+                  <p className="text-xs text-slate-400 leading-relaxed font-light">
+                    {stage.desc}
+                  </p>
                 </div>
 
-                <h3 className="text-xl font-extrabold text-white mb-2 tracking-tight">
-                  {step.title}
-                </h3>
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                  {step.desc}
-                </p>
-
-                <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-[10px] font-mono text-slate-500">
-                  <span>STAGE {step.number} OF 06</span>
-                  <span className="text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity">
-                    KRAXX PIPELINE →
+                <div className="space-y-2 pt-2 border-t border-white/10">
+                  <span className="font-mono text-[10px] text-slate-500 uppercase tracking-widest block">
+                    STAGE DELIVERABLE:
+                  </span>
+                  <span className="text-xs font-mono text-purple-300 font-medium block">
+                    {stage.deliverable}
                   </span>
                 </div>
               </motion.div>
             );
           })}
         </div>
+
       </div>
     </section>
   );
 }
+

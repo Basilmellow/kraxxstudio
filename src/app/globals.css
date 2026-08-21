@@ -1,51 +1,51 @@
 @import "tailwindcss";
 
 /* ============================================================
-   KRAXX STUDIO — design tokens
+   KRAXX STUDIO — Design Tokens & System UI
    ------------------------------------------------------------
-   Signature: the logo mark is two angled chevrons cut into a K —
-   forward motion, a diagonal edge, no soft curves. That geometry
-   is the whole design language here: cards get one clipped
-   corner (never rounded), dividers are chevrons instead of
-   hairlines, and gradients sweep at a fixed 115° angle instead
-   of sitting behind blurred radial "spotlights." Brand hexes
-   below are locked to the logo — only how they're used changed.
+   KRAXXSEC DNA + KRAXX STUDIO Creative Personality
+   Dark canvas foundation, monospace metadata, system badges,
+   clipped corner geometry, and rich electric violet accents.
    ============================================================ */
 
 @layer base {
   :root {
-    /* Brand palette — locked to the logo, do not change hexes */
-    --bg-dark: #0b0f19;
-    --bg-card: #1a1f2e;
-    --bg-card-elevated: #242b3f;
-    --ink: #f3f4f6;
+    /* Brand Palette */
+    --bg-dark: #070a12;
+    --bg-surface: #0e1322;
+    --bg-card: #141a2e;
+    --bg-card-elevated: #1e263d;
+    --ink: #f8fafc;
+
     --accent-blue: #4f46e5;
     --accent-violet: #8b5cf6;
-    --accent-magenta: #d946ef;
+    --accent-magenta: #ec4899;
+    --accent-cyan: #06b6d4;
+    --accent-amber: #f59e0b;
 
-    /* Derived neutrals */
+    /* Derived Neutrals */
     --text-primary: var(--ink);
-    --text-secondary: rgba(243, 244, 246, 0.68);
-    --text-tertiary: rgba(243, 244, 246, 0.42);
-    --border-subtle: rgba(243, 244, 246, 0.09);
-    --border-strong: rgba(243, 244, 246, 0.18);
+    --text-secondary: #94a3b8;
+    --text-tertiary: #64748b;
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --border-strong: rgba(255, 255, 255, 0.18);
 
-    /* The signature sweep — always this angle, never radial */
-    --brand-sweep: linear-gradient(115deg, var(--accent-blue) 0%, var(--accent-violet) 55%, var(--accent-magenta) 100%);
-    --brand-sweep-soft: linear-gradient(115deg, rgba(79, 70, 229, 0.16) 0%, rgba(139, 92, 246, 0.12) 55%, rgba(217, 70, 239, 0.10) 100%);
+    /* Brand Sweeps */
+    --brand-sweep: linear-gradient(115deg, var(--accent-violet) 0%, #a855f7 50%, var(--accent-magenta) 100%);
+    --brand-sweep-soft: linear-gradient(115deg, rgba(139, 92, 246, 0.18) 0%, rgba(168, 85, 247, 0.12) 55%, rgba(236, 72, 153, 0.10) 100%);
 
-    /* The signature cut — one corner clipped like the K mark, never all four rounded */
-    --cut-sm: 14px;
-    --cut-md: 22px;
-    --cut-lg: 34px;
+    /* Geometry Cuts */
+    --cut-sm: 12px;
+    --cut-md: 20px;
+    --cut-lg: 30px;
 
-    /* Type scale */
+    /* Fonts */
     --font-display: var(--font-display-face, "Space Grotesk"), var(--font-geist-sans), system-ui, sans-serif;
-    --font-body: var(--font-body-face, "Inter"), var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+    --font-body: var(--font-body-face, "Inter"), var(--font-geist-sans), system-ui, sans-serif;
     --font-mono: var(--font-mono-face, "IBM Plex Mono"), var(--font-geist-mono), ui-monospace, monospace;
 
-    --shadow-card: 0 24px 60px -20px rgba(11, 15, 25, 0.65);
-    --shadow-lift: 0 30px 80px -24px rgba(79, 70, 229, 0.35);
+    --shadow-card: 0 24px 60px -20px rgba(7, 10, 18, 0.85);
+    --shadow-lift: 0 30px 80px -24px rgba(139, 92, 246, 0.4);
   }
 
   body {
@@ -57,18 +57,12 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  .font-display {
+  h1, h2, h3, h4, .font-heading, .font-display {
     font-family: var(--font-display);
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
   }
 
-  .font-mono,
-  .eyebrow,
-  .kx-divider span {
+  .font-mono, .eyebrow, .kx-divider span, .nw-badge, .btn-nw {
     font-family: var(--font-mono);
   }
 
@@ -85,12 +79,76 @@
 }
 
 /* ============================================================
-   Signature surfaces — the K-cut, used instead of glassmorphism
+   KRAXXSEC DNA System Badges & Button Controls
    ============================================================ */
 
-/* Base card: one clipped corner (top-right), flat fill, thin
-   hairline border. No blur, no gradient fill — the cut carries
-   the brand instead of glow or glass. */
+.nw-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  background-color: rgba(14, 19, 34, 0.8);
+  border: 1px solid var(--border-subtle);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  transition: all 0.2s ease;
+}
+
+.nw-badge:hover {
+  border-color: var(--border-strong);
+  color: var(--text-primary);
+}
+
+.btn-nw {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.825rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-radius: 9999px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.btn-nw-solid {
+  background: var(--brand-sweep);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.3);
+}
+
+.btn-nw-solid:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(139, 92, 246, 0.5);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.btn-nw-ghost {
+  background: rgba(14, 19, 34, 0.6);
+  color: var(--text-primary);
+  border: 1px solid var(--border-strong);
+  backdrop-filter: blur(12px);
+}
+
+.btn-nw-ghost:hover {
+  background: rgba(139, 92, 246, 0.12);
+  border-color: var(--accent-violet);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+   Signature Surfaces — K-cut polygon panels
+   ============================================================ */
+
 .kx-card {
   position: relative;
   background: var(--bg-card);
@@ -105,8 +163,6 @@
   box-shadow: var(--shadow-card);
 }
 
-/* The cut corner itself rendered as a thin brand-gradient seam,
-   so the clip reads as an intentional mark, not a CSS accident. */
 .kx-card::after {
   content: "";
   position: absolute;
@@ -119,9 +175,6 @@
   opacity: 0.9;
 }
 
-/* Elevated variant for the one or two moments per page that
-   should carry more weight (pricing highlight, featured case
-   study) — still flat, just a stronger seam and fill. */
 .kx-card-elevated {
   background: var(--bg-card-elevated);
   border-color: var(--border-strong);
@@ -132,26 +185,23 @@
   height: var(--cut-lg);
 }
 
-/* Nav is the one place a blur is earned — it sits over moving
-   content, not over empty space. */
 .kx-nav {
-  background: rgba(11, 15, 25, 0.86);
+  background: rgba(7, 10, 18, 0.88);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border-subtle);
 }
 
 /* ============================================================
-   Type treatments
+   Typography & Dividers
    ============================================================ */
 
-/* Eyebrow label — mono, wide tracking, used above headings
-   instead of a numbered marker (nothing here is a sequence). */
 .eyebrow {
   font-size: 0.75rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--accent-violet);
+  font-family: var(--font-mono);
 }
 
 .text-gradient {
@@ -161,18 +211,10 @@
   -webkit-text-fill-color: transparent;
 }
 
-/* Reserve the glow for the single wordmark moment in the hero —
-   not applied to body copy or repeated headings. */
 .glow-mark {
   text-shadow: 0 0 40px rgba(139, 92, 246, 0.45);
 }
 
-/* ============================================================
-   Chevron divider — replaces the generic hairline rule. Reads
-   as "K", not as a decorative line, and doubles as a directional
-   cue ("keep reading this way"). Markup:
-   <div class="kx-divider"><span>Section label</span></div>
-   ============================================================ */
 .kx-divider {
   display: flex;
   align-items: center;
@@ -197,16 +239,16 @@
 }
 
 /* ============================================================
-   Background treatment — directional sweep + fine grid, no
-   radial "spotlight" blob (that's the generic default).
+   Background Field Grid
    ============================================================ */
+
 .kx-field {
   position: relative;
   background-color: var(--bg-dark);
   background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.028) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.028) 1px, transparent 1px);
-  background-size: 44px 44px;
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
 }
 
 .kx-field::before {
@@ -214,15 +256,15 @@
   position: absolute;
   inset: 0;
   background: var(--brand-sweep-soft);
-  mask-image: linear-gradient(180deg, black, transparent 65%);
-  -webkit-mask-image: linear-gradient(180deg, black, transparent 65%);
+  mask-image: linear-gradient(180deg, black, transparent 75%);
+  -webkit-mask-image: linear-gradient(180deg, black, transparent 75%);
   pointer-events: none;
 }
 
 /* ============================================================
-   Buttons — the sweep as fill on primary only; everything else
-   stays flat so the one gradient button still reads as an accent
+   Buttons
    ============================================================ */
+
 .kx-btn-primary {
   display: inline-flex;
   align-items: center;
@@ -259,14 +301,13 @@
 }
 
 /* ============================================================
-   Marquee — kept (it's functionally fine), fades at the edges
-   with a mask instead of a hard cut
+   Marquee
    ============================================================ */
+
 @keyframes marquee {
   0% {
     transform: translateX(0%);
   }
-
   100% {
     transform: translateX(-50%);
   }
@@ -275,7 +316,7 @@
 .animate-marquee {
   display: flex;
   width: max-content;
-  animation: marquee 30s linear infinite;
+  animation: marquee 35s linear infinite;
 }
 
 .animate-marquee:hover {
@@ -290,16 +331,17 @@
 /* ============================================================
    Scrollbar
    ============================================================ */
+
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #090a0f;
+  background: #070a12;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1e2336;
+  background: #1e263d;
   border-radius: 4px;
 }
 
@@ -308,13 +350,11 @@
 }
 
 /* ============================================================
-   Reduced motion
+   Reduced Motion
    ============================================================ */
-@media (prefers-reduced-motion: reduce) {
 
-  *,
-  ::before,
-  ::after {
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
@@ -325,8 +365,7 @@
     animation: none !important;
   }
 
-  .kx-card:hover,
-  .kx-btn-primary:hover {
+  .kx-card:hover, .kx-btn-primary:hover, .btn-nw-solid:hover {
     transform: none !important;
   }
 }

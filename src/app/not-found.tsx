@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft, Sparkles, ShieldAlert } from "lucide-react";
+import { ArrowLeft, ShieldAlert } from "lucide-react";
 
 export default function NotFound() {
   return (

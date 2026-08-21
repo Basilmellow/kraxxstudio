@@ -1,163 +1,173 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { ArrowUpRight, CheckCircle2, Sparkles, Shield, Zap } from "lucide-react";
+import { ArrowUpRight, CheckCircle2, Shield, Terminal } from "lucide-react";
 import { CTASection } from "@/components/sections/CTASection";
 
 export const metadata: Metadata = {
-  title: "Social Media Marketing Pricing | KRAXX Studio",
+  title: "Engagement Models & Pricing | KRAXX Studio",
   description:
-    "Explore KRAXX Studio's social media marketing and digital growth retainer plans for social media management, content, community management, personal branding, and paid social.",
+    "Transparent engagement models and custom proposals for KRAXX Studio digital strategy, web application engineering, brand identity systems, and growth retainers.",
   alternates: {
     canonical: "/pricing",
+  },
+  openGraph: {
+    title: "Engagement Models & Pricing | KRAXX Studio",
+    description:
+      "Transparent engagement models and custom proposals for KRAXX Studio digital strategy, web engineering, branding, and growth.",
+    url: "https://kraxxstudio.com/pricing",
+    type: "website",
   },
 };
 
 const PRICING_TIERS = [
   {
-    name: "STARTER",
+    name: "STARTER ENGINE",
     tagline: "For businesses building consistency & visual authority.",
-    rangeIndicator: "Proposal Basis / ~$399/mo",
+    rangeIndicator: "Proposal Basis / ~$1,000 – $2,500/mo",
     popular: false,
-    badge: "FOUNDATION ENGINE",
-    description: "Designed for growing brands that need a consistent publishing cadence, professional visual grid, and baseline channel management.",
+    badge: "FOUNDATION SYSTEM",
+    description: "Designed for growing brands that need an elevated visual identity, Next.js web presence, and baseline digital content strategy.",
     features: [
-      "4 Core Social Platforms (Instagram + LinkedIn or X)",
-      "15 High-Quality Formatted Posts per Month",
-      "Monthly Content Calendar Architecture",
-      "Brand Visual Template Suite",
-      "Basic Comment Moderation & Triage",
-      "Monthly Performance Report",
+      "Digital Presence & Friction Audit",
+      "Brand Visual System & Design Assets",
+      "High-Speed Web Landing Page (Next.js)",
+      "12-15 Editorial Content Assets per Month",
+      "Local SEO & Search Optimization",
+      "Monthly Strategy & Metrics Review",
     ],
-    ctaText: "REQUEST STARTER PROPOSAL",
+    ctaText: "[ INITIATE STARTER PROPOSAL ]",
   },
   {
-    name: "GROWTH",
-    tagline: "For businesses focused on aggressive audience growth.",
-    rangeIndicator: "Proposal Basis / ~$699/mo",
+    name: "GROWTH ENGINE",
+    tagline: "For scaling brands focused on pipeline & category leadership.",
+    rangeIndicator: "Proposal Basis / ~$2,500 – $5,000/mo",
     popular: true,
-    badge: "MOST POPULAR",
-    description: "Our flagship growth engine combining short-form video editing, carousel graphics, active community moderation, and personal branding.",
+    badge: "RECOMMENDED",
+    description: "Our flagship growth retainer combining custom web architecture, short-form video editing, content distribution, executive positioning, and lead conversion.",
     features: [
-      "3 to 4 Social Platforms (Instagram, LinkedIn, X, TikTok)",
-      "20 High-Impact Posts / Short Videos per Month",
-      "Dedicated Short-Form Video Editing (Reels/TikToks)",
-      "Executive Personal Branding (Founder LinkedIn Ghostwriting)",
-      "Daily Comment & DM Lead Triage (7 Days/Week)",
-      "Bi-Weekly Analytics Strategy Calls",
-      "Community Discord / Group Setup & Moderation",
+      "Full Web Application Engineering & Maintenance",
+      "20 High-Impact Content Assets & Video Cuts / Month",
+      "Executive Personal Branding (Founder Ghostwriting)",
+      "Multi-Channel Content Engine (Instagram, LinkedIn, X)",
+      "Technical SEO & Conversion Funnel Optimization",
+      "Bi-Weekly Growth Strategy Calls",
+      "Direct Channel Support with Lead Engineers",
     ],
-    ctaText: "REQUEST GROWTH PROPOSAL",
+    ctaText: "[ INITIATE GROWTH PROPOSAL ]",
   },
   {
-    name: "PREMIUM",
-    tagline: "For established brands seeking full digital presence management.",
+    name: "CUSTOM ENTERPRISE",
+    tagline: "For established businesses needing full digital operations.",
     rangeIndicator: "Custom Quote",
     popular: false,
-    badge: "ENTERPRISE STUDIO",
-    description: "End-to-end studio operations covering full channel management, paid social campaign management, dedicated creative team, and custom SLA.",
+    badge: "FULL STUDIO UNIT",
+    description: "End-to-end dedicated creative and engineering operations covering web platform development, brand repositioning, paid acquisition, and custom SLA.",
     features: [
-      "All Social Channels + Community Server Moderation",
-      "30+ High-Production Media Assets per Month",
-      "Paid Social Campaign Setup, Creative Testing & ROAS Management",
-      "Founder & Executive Team Personal Branding",
+      "Custom Web Platform & Complex Integration",
+      "30+ High-Production Media & Copy Assets / Month",
+      "Paid Search & Social Campaign Management (ROAS Focus)",
+      "Founder & Executive Leadership Personal Branding",
       "Dedicated Studio Creative Director & Strategist",
-      "24/7 Priority Support & Slack Channel",
-      "Custom Multi-Touch Lead Attribution Dashboard",
+      "Custom Lead Attribution & Conversion Dashboard",
+      "Priority SLA & Direct Channel Access",
     ],
-    ctaText: "REQUEST CUSTOM PROPOSAL",
+    ctaText: "[ REQUEST ENTERPRISE SCOPE ]",
   },
 ];
 
 export default function PricingPage() {
   return (
-    <div className="pt-28 pb-16 bg-slate-950 min-h-screen">
-      {/* Header */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-panel border border-indigo-500/30 text-indigo-300 text-xs font-mono mb-6">
-          <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
-          <span>TRANSPARENT RETAINER INVESTMENT</span>
+    <div className="pt-28 pb-16 bg-bg-dark min-h-screen">
+      
+      {/* Header Viewport */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center space-y-6">
+        <div className="eyebrow inline-flex items-center space-x-2">
+          <Terminal className="w-3.5 h-3.5 text-purple-400" />
+          <span>TRANSPARENT ENGAGEMENT & PROPOSAL MODELS</span>
         </div>
-        <h1 className="text-4xl sm:text-6xl md:text-7xl font-black text-white uppercase tracking-tight">
-          STUDIO PLANS & <br />
-          <span className="text-gradient-blue">PROPOSAL TIERS.</span>
+        <h1 className="text-4xl sm:text-6xl md:text-7xl font-heading font-bold text-white uppercase tracking-tight">
+          ENGAGEMENT MODELS & <br />
+          <span className="text-gradient">PROPOSAL TIERS</span>
         </h1>
-        <p className="mt-6 text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
-          Every brand has unique scope requirements. We customize exact proposal parameters based on platform coverage, asset volume, and management intensity.
+        <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto font-light leading-relaxed">
+          We build structured, transparent proposals tailored to your specific digital scope, platform requirements, and growth objectives.
         </p>
       </section>
 
       {/* Pricing Cards */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 mb-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {PRICING_TIERS.map((tier) => (
             <div
               key={tier.name}
-              className={`glass-card rounded-3xl p-8 border flex flex-col justify-between relative overflow-hidden ${
+              className={`kx-card p-8 border flex flex-col justify-between relative overflow-hidden bg-bg-card ${
                 tier.popular
-                  ? "border-indigo-500/50 shadow-2xl shadow-indigo-600/20 bg-indigo-950/20"
+                  ? "border-purple-500/60 shadow-[0_0_30px_rgba(139,92,246,0.2)]"
                   : "border-white/10"
               }`}
             >
               {tier.popular && (
-                <div className="absolute top-0 right-0 bg-gradient-to-l from-indigo-600 to-blue-600 text-white text-[10px] font-mono font-bold px-4 py-1 rounded-bl-xl tracking-wider">
+                <div className="absolute top-0 right-0 bg-purple-600 text-white text-[10px] font-mono font-bold px-4 py-1 rounded-bl-xl tracking-wider uppercase">
                   {tier.badge}
                 </div>
               )}
 
-              <div>
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-xs font-mono text-indigo-400 font-bold uppercase">{tier.name}</span>
+              <div className="space-y-6">
+                <div className="flex items-center justify-between border-b border-white/10 pb-4 font-mono text-xs">
+                  <span className="text-purple-400 font-bold uppercase">{tier.name}</span>
                   {!tier.popular && (
-                    <span className="text-[10px] font-mono text-slate-400">{tier.badge}</span>
+                    <span className="text-slate-500">{tier.badge}</span>
                   )}
                 </div>
 
-                <h3 className="text-2xl font-black text-white mb-2">{tier.name}</h3>
-                <p className="text-xs text-slate-300 mb-6">{tier.tagline}</p>
-
-                <div className="p-4 rounded-2xl bg-white/5 border border-white/5 mb-6">
-                  <span className="text-[10px] font-mono uppercase text-slate-400">ESTIMATED RANGE</span>
-                  <p className="text-lg font-black text-white mt-0.5">{tier.rangeIndicator}</p>
+                <div>
+                  <h3 className="text-2xl font-heading font-bold text-white uppercase">{tier.name}</h3>
+                  <p className="text-xs text-slate-400 font-light mt-1">{tier.tagline}</p>
                 </div>
 
-                <p className="text-xs text-slate-300 leading-relaxed mb-6">{tier.description}</p>
+                <div className="p-4 rounded-xl bg-bg-dark border border-white/10 space-y-1 font-mono">
+                  <span className="text-[10px] uppercase text-slate-500 block">ESTIMATED INVESTMENT RANGE</span>
+                  <span className="text-base font-bold text-white block">{tier.rangeIndicator}</span>
+                </div>
 
-                <div className="space-y-3 mb-8">
-                  <p className="text-[10px] font-mono uppercase tracking-widest text-slate-400">INCLUDED CAPABILITIES:</p>
+                <p className="text-xs text-slate-300 leading-relaxed font-light">{tier.description}</p>
+
+                <div className="space-y-3 font-mono text-xs pt-2">
+                  <span className="text-[10px] uppercase tracking-widest text-purple-400 font-bold block">INCLUDED CAPABILITIES:</span>
                   {tier.features.map((feat, idx) => (
-                    <div key={idx} className="flex items-start gap-2 text-xs text-slate-200">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                    <div key={idx} className="flex items-start gap-2 text-slate-200">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-purple-400 shrink-0 mt-0.5" />
                       <span>{feat}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <Link
-                href="/contact"
-                className={`w-full py-3.5 rounded-full text-xs font-bold uppercase tracking-wider text-center transition-all flex items-center justify-center gap-2 ${
-                  tier.popular
-                    ? "bg-gradient-to-r from-indigo-600 to-blue-600 text-white shadow-lg shadow-indigo-600/30 hover:scale-[1.02]"
-                    : "bg-white/10 text-white hover:bg-white/20 border border-white/10"
-                }`}
-              >
-                <span>{tier.ctaText}</span>
-                <ArrowUpRight className="w-4 h-4" />
-              </Link>
+              <div className="pt-8">
+                <Link
+                  href="/contact"
+                  className={`btn-nw w-full justify-center text-xs ${
+                    tier.popular ? "btn-nw-solid" : "btn-nw-ghost"
+                  }`}
+                >
+                  <span>{tier.ctaText}</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
             </div>
           ))}
         </div>
       </section>
 
       {/* Pricing Policy Guarantee */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 mb-20">
-        <div className="glass-panel p-8 rounded-3xl border border-white/10 text-center flex flex-col items-center gap-4">
-          <Shield className="w-8 h-8 text-indigo-400" />
-          <h3 className="text-xl font-bold text-white uppercase tracking-tight">
-            CREDIBILITY & PROPOSAL HONESTY
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 mb-16">
+        <div className="kx-card p-8 rounded-2xl border border-white/10 bg-bg-card text-center flex flex-col items-center gap-4">
+          <Shield className="w-8 h-8 text-purple-400" />
+          <h3 className="text-xl font-heading font-bold text-white uppercase tracking-tight">
+            PROPOSAL HONESTY & SCOPE TRANSPARENCY
           </h3>
-          <p className="text-xs sm:text-sm text-slate-300 max-w-xl leading-relaxed">
-            We do not publish fake price tags or lock clients into opaque long-term contracts without mutual alignment. Every proposal starts with a 30-minute discovery call to map your exact scope requirements.
+          <p className="text-xs sm:text-sm text-slate-300 max-w-xl leading-relaxed font-light">
+            We do not use high-pressure sales tactics or hide setup fees in small print. Every project proposal begins with a thorough discovery audit to establish clear deliverables, timelines, and measurable targets.
           </p>
         </div>
       </section>

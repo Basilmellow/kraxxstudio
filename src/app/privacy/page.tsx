@@ -19,7 +19,7 @@ export default function PrivacyPage() {
 
           <h2 className="text-xl font-bold text-white">1. Overview</h2>
           <p>
-            {SITE_CONFIG.fullName} ("KRAXX", "we", "us", or "our") respects your privacy and is committed to protecting the personal information you share when inquiring about or using our digital growth studio services.
+            {SITE_CONFIG.fullName} (&quot;KRAXX&quot;, &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) respects your privacy and is committed to protecting the personal information you share when inquiring about or using our digital growth studio services.
           </p>
 
           <h2 className="text-xl font-bold text-white">2. Information Collection</h2>

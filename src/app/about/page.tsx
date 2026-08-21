@@ -1,147 +1,133 @@
 import { Metadata } from "next";
-import Link from "next/link";
-import { ArrowUpRight, Sparkles, Target, ShieldCheck, Cpu, Layers, Users, TrendingUp, Zap } from "lucide-react";
+import { ArrowUpRight, Sparkles, Target, TrendingUp, Terminal } from "lucide-react";
 import { CTASection } from "@/components/sections/CTASection";
-import { KraxxLogo } from "@/components/ui/KraxxLogo";
-import { SITE_CONFIG } from "@/data/siteConfig";
 
 export const metadata: Metadata = {
-  title: "About KRAXX Studio | Social Media & Digital Growth Agency",
+  title: "About KRAXX Studio | International Digital Growth & Creative Technology Studio",
   description:
-    "Learn how KRAXX Studio helps ambitious brands build stronger digital presence through social media strategy, content, community, and measurable growth.",
+    "Learn about KRAXX Studio—the creative technology and digital growth division of KRAXX. Strategy, Next.js web application engineering, brand identity, and content systems.",
   alternates: {
     canonical: "/about",
+  },
+  openGraph: {
+    title: "About KRAXX Studio | Digital Growth & Creative Systems",
+    description:
+      "Digital growth and creative technology studio. We build the digital presence behind ambitious brands.",
+    url: "https://kraxxstudio.com/about",
+    type: "website",
   },
 };
 
 export default function AboutPage() {
   return (
-    <div className="pt-28 pb-16 bg-[#0B0F19] min-h-screen">
-      {/* Header */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center flex flex-col items-center">
-        <div className="mb-6">
-          <KraxxLogo size="lg" />
+    <div className="pt-28 pb-16 bg-bg-dark min-h-screen">
+      
+      {/* Header Viewport */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center space-y-6">
+        <div className="eyebrow inline-flex items-center space-x-2">
+          <Terminal className="w-3.5 h-3.5 text-purple-400" />
+          <span>KRAXX STUDIO // BRAND ESSENCE & PHILOSOPHY</span>
         </div>
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-panel border border-purple-500/30 text-purple-300 text-xs font-mono mb-6">
-          <Sparkles className="w-3.5 h-3.5 text-fuchsia-400" />
-          <span>BRAND ESSENCE & STUDIO PHILOSOPHY</span>
-        </div>
-        <h1 className="text-4xl sm:text-6xl md:text-7xl font-black text-white uppercase tracking-tight">
-          STRATEGY. CONTENT. <br />
-          <span className="text-gradient-blue">COMMUNITY. GROWTH.</span>
+        <h1 className="text-4xl sm:text-6xl md:text-7xl font-heading font-bold text-white uppercase tracking-tight">
+          WE BUILD THE DIGITAL PRESENCE <br />
+          <span className="text-gradient">BEHIND AMBITIOUS BRANDS.</span>
         </h1>
-        <p className="mt-6 text-base sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed font-medium">
-          {SITE_CONFIG.name} is a modern digital growth studio created to help ambitious brands replace random posting with a predictable, high-impact content and community engine.
+        <p className="text-base sm:text-xl text-slate-300 max-w-3xl mx-auto font-light leading-relaxed">
+          KRAXX Studio is the digital growth, creative technology, and brand engineering division of KRAXX. We help companies, founders, and creators turn their online footprint into an engine for market leadership.
         </p>
       </section>
 
-      {/* Brand Essence 3 Cards (Directly from Brand Guidelines Sheet) */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 mb-16">
-        <div className="text-center mb-8">
-          <span className="text-xs font-mono text-purple-400 uppercase font-bold tracking-widest">OFFICIAL BRAND ESSENCE</span>
+      {/* Brand Essence 3 Cards */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 mb-16 space-y-8">
+        <div className="text-center font-mono text-xs text-purple-400 font-bold tracking-widest">
+          [ OFFICIAL BRAND ESSENCE ]
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="glass-card p-8 rounded-3xl border border-indigo-500/30">
-            <div className="w-12 h-12 rounded-2xl bg-indigo-500/20 border border-indigo-500/40 flex items-center justify-center text-indigo-400 mb-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="kx-card p-8 border border-white/10 bg-bg-card space-y-4">
+            <div className="w-12 h-12 rounded-xl bg-bg-dark border border-white/10 flex items-center justify-center text-purple-400">
               <Target className="w-6 h-6" />
             </div>
-            <h3 className="text-2xl font-black text-white mb-2 tracking-tight">STRATEGIC</h3>
-            <p className="text-sm text-slate-300 leading-relaxed font-medium">
-              Data-driven strategies that create real impact.
+            <h3 className="text-2xl font-heading font-bold text-white uppercase">STRATEGIC</h3>
+            <p className="text-xs text-slate-300 font-light leading-relaxed">
+              Data-backed positioning frameworks and conversion architecture built for measurable business impact.
             </p>
           </div>
 
-          <div className="glass-card p-8 rounded-3xl border border-purple-500/30">
-            <div className="w-12 h-12 rounded-2xl bg-purple-500/20 border border-purple-500/40 flex items-center justify-center text-purple-400 mb-6">
+          <div className="kx-card p-8 border border-white/10 bg-bg-card space-y-4">
+            <div className="w-12 h-12 rounded-xl bg-bg-dark border border-white/10 flex items-center justify-center text-purple-400">
               <Sparkles className="w-6 h-6" />
             </div>
-            <h3 className="text-2xl font-black text-white mb-2 tracking-tight">CREATIVE</h3>
-            <p className="text-sm text-slate-300 leading-relaxed font-medium">
-              Content that connects, engages, and converts.
+            <h3 className="text-2xl font-heading font-bold text-white uppercase">CREATIVE</h3>
+            <p className="text-xs text-slate-300 font-light leading-relaxed">
+              High-fidelity visual identity systems, editorial typography, and short-form media that commands attention.
             </p>
           </div>
 
-          <div className="glass-card p-8 rounded-3xl border border-fuchsia-500/30">
-            <div className="w-12 h-12 rounded-2xl bg-fuchsia-500/20 border border-fuchsia-500/40 flex items-center justify-center text-fuchsia-400 mb-6">
+          <div className="kx-card p-8 border border-white/10 bg-bg-card space-y-4">
+            <div className="w-12 h-12 rounded-xl bg-bg-dark border border-white/10 flex items-center justify-center text-purple-400">
               <TrendingUp className="w-6 h-6" />
             </div>
-            <h3 className="text-2xl font-black text-white mb-2 tracking-tight">GROWTH FOCUSED</h3>
-            <p className="text-sm text-slate-300 leading-relaxed font-medium">
-              Built for long-term growth and measurable results.
+            <h3 className="text-2xl font-heading font-bold text-white uppercase">GROWTH FOCUSED</h3>
+            <p className="text-xs text-slate-300 font-light leading-relaxed">
+              Engineered for compounding pipeline velocity, search authority, and long-term commercial value.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Division Ecosystem Card */}
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+        <div className="kx-card p-8 sm:p-12 border border-white/10 bg-bg-surface/80 rounded-2xl space-y-6">
+          <div className="flex items-center justify-between border-b border-white/10 pb-4 font-mono text-xs">
+            <span className="text-purple-400 font-bold">KRAXX DIVISION ARCHITECTURE</span>
+            <span className="nw-badge text-purple-300">TWO SPECIALIZED DIVISIONS</span>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 font-mono text-xs">
+            <div className="p-6 rounded-xl bg-bg-dark border border-purple-500/30 space-y-2">
+              <span className="text-purple-400 font-bold uppercase block text-[10px]">DIVISION 01</span>
+              <h4 className="text-white font-bold text-base">KRAXX STUDIO</h4>
+              <p className="text-slate-400 text-[11px] font-light leading-relaxed">
+                Digital Growth, Web Engineering, Brand Systems, Content Engine, Executive Positioning, & Technical SEO.
+              </p>
+              <span className="text-purple-300 text-[10px] block pt-1">kraxxstudio.com (Current Site)</span>
+            </div>
+
+            <div className="p-6 rounded-xl bg-bg-dark border border-white/10 space-y-2">
+              <span className="text-slate-500 font-bold uppercase block text-[10px]">DIVISION 02</span>
+              <h4 className="text-white font-bold text-base">KRAXXSEC</h4>
+              <p className="text-slate-400 text-[11px] font-light leading-relaxed">
+                Cybersecurity, Security Engineering, Threat Modeling, Incident Response, & Vulnerability Assessment.
+              </p>
+              <a
+                href="https://kraxxsec.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-purple-400 hover:text-white transition-colors text-[10px] flex items-center gap-1 pt-1"
+              >
+                <span>kraxxsec.com</span>
+                <ArrowUpRight className="w-3 h-3" />
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Core Studio Manifesto */}
-      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 mb-16">
-        <div className="glass-card p-8 sm:p-14 rounded-3xl border border-white/10 relative overflow-hidden">
-          <div className="flex flex-col gap-6 text-slate-300 text-sm sm:text-base leading-relaxed">
-            <h2 className="text-xs font-mono text-purple-400 font-bold uppercase tracking-widest">
-              THE STUDIO MANIFESTO
-            </h2>
-            <p className="text-xl sm:text-2xl font-bold text-white leading-snug">
-              Most businesses fail on social media not because they lack products or ideas, but because they treat digital presence as a side project rather than a core commercial asset.
-            </p>
-            <p>
-              In the modern algorithm ecosystem, scrollers don't reward corporate stock photos, robotic broadcast announcements, or disconnected graphics. They reward visual clarity, strategic intent, and authentic community engagement.
-            </p>
-            <p>
-              We operate as a specialized external studio team—combining strategic content planning, editorial graphic design, short-form video editing, humanized community moderation, and data analytics under one disciplined operating model.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* 4 Studio Pillars Grid */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 mb-20">
-        <div className="text-center mb-12">
-          <span className="text-xs font-mono text-indigo-400 uppercase font-semibold">STUDIO FOUNDATIONS</span>
-          <h2 className="text-3xl font-black text-white uppercase tracking-tight mt-1">
-            HOW WE APPROACH DIGITAL GROWTH
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+        <div className="kx-card p-8 sm:p-12 border border-white/10 bg-bg-card rounded-2xl space-y-6">
+          <span className="font-mono text-xs text-purple-400 font-bold uppercase tracking-widest block">
+            THE KRAXX MANIFESTO
+          </span>
+          <h2 className="text-2xl sm:text-3xl font-heading font-bold text-white leading-snug">
+            Most businesses underperform online not because they lack quality products, but because their digital presence looks uncalibrated and amateurish.
           </h2>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="glass-card p-8 rounded-3xl border border-white/10">
-            <div className="w-10 h-10 rounded-2xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 mb-4">
-              <Target className="w-5 h-5" />
-            </div>
-            <h3 className="text-xl font-bold text-white mb-2">Category Positioning</h3>
-            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-              We position your brand so it stands out immediately in saturated feeds. Every caption, visual font, and carousel cover reinforces your distinct market category.
-            </p>
-          </div>
-
-          <div className="glass-card p-8 rounded-3xl border border-white/10">
-            <div className="w-10 h-10 rounded-2xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 mb-4">
-              <Cpu className="w-5 h-5" />
-            </div>
-            <h3 className="text-xl font-bold text-white mb-2">Algorithmic Pacing</h3>
-            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-              We format content specifically for feed mechanics—capitalizing on high save rates, short-form video watch duration, and engagement velocity.
-            </p>
-          </div>
-
-          <div className="glass-card p-8 rounded-3xl border border-white/10">
-            <div className="w-10 h-10 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-4">
-              <Users className="w-5 h-5" />
-            </div>
-            <h3 className="text-xl font-bold text-white mb-2">Humanized Community Triage</h3>
-            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-              We treat comment sections and DMs as high-value conversation hubs. Active daily moderation turns passive scrollers into long-term brand advocates.
-            </p>
-          </div>
-
-          <div className="glass-card p-8 rounded-3xl border border-white/10">
-            <div className="w-10 h-10 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-4">
-              <ShieldCheck className="w-5 h-5" />
-            </div>
-            <h3 className="text-xl font-bold text-white mb-2">Empirical Accountability</h3>
-            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-              No vanity promises or fake numbers. We track real retention metrics, audience growth, save ratios, and inbound lead velocity every 30 days.
-            </p>
-          </div>
+          <p className="text-slate-300 text-sm leading-relaxed font-light">
+            In modern international markets, high-intent buyers and partners conduct immediate digital due diligence. If your website is slow, your branding looks outdated, or your executive leadership is invisible on social channels, you forfeit trust to vocal competitors.
+          </p>
+          <p className="text-slate-300 text-sm leading-relaxed font-light">
+            We operate as an integrated creative and technical studio—combining positioning strategy, high-speed Next.js web development, visual identity, and distribution analytics into one disciplined commercial system.
+          </p>
         </div>
       </section>
 
@@ -149,3 +135,4 @@ export default function AboutPage() {
     </div>
   );
 }
+

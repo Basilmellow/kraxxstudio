@@ -1,48 +1,48 @@
 import Link from "next/link";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles, Send } from "lucide-react";
 
 export function CTASection() {
   return (
-    <section className="py-24 sm:py-32 bg-slate-950 border-t border-white/10 relative overflow-hidden kx-field">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center flex flex-col items-center">
-        {/* Glow backdrop */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-purple-600/15 rounded-full blur-[140px] pointer-events-none" />
-
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full kx-card border border-indigo-500/30 text-indigo-300 text-xs font-mono mb-6">
+    <section className="py-24 bg-bg-dark border-b border-white/10 relative overflow-hidden">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center flex flex-col items-center space-y-8">
+        
+        <div className="eyebrow flex items-center space-x-2">
           <Sparkles className="w-3.5 h-3.5 text-purple-400" />
-          <span>PROJECT INITIATION</span>
+          <span>PROJECT INITIATION // KRAXX STUDIO</span>
         </div>
 
-        <h2 className="text-4xl sm:text-6xl font-black text-white uppercase tracking-tight max-w-3xl leading-tight">
+        <h2 className="text-4xl sm:text-6xl font-heading font-bold text-white uppercase tracking-tight max-w-3xl leading-tight">
           HAVE SOMETHING <br />
-          <span className="text-gradient glow-mark">WORTH BUILDING?</span>
+          <span className="text-gradient">WORTH BUILDING?</span>
         </h2>
 
-        <p className="mt-4 text-base sm:text-lg text-slate-300 max-w-xl font-medium leading-relaxed">
-          Tell us what you're trying to achieve. We'll audit your current digital presence and figure out the exact next step.
+        <p className="text-base sm:text-lg text-slate-300 max-w-xl font-light leading-relaxed">
+          Tell us about your business goals. We&apos;ll audit your current digital footprint and engineer the exact growth system you need.
         </p>
 
-        <div className="mt-10 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+        <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
           <Link
             href="/contact"
-            className="kx-btn-primary w-full sm:w-auto justify-center text-xs sm:text-sm uppercase tracking-wider"
+            className="btn-nw btn-nw-solid w-full sm:w-auto text-xs justify-center"
           >
-            <span>START A PROJECT</span>
-            <ArrowRight className="w-4 h-4" />
+            <span>[ START A PROJECT ]</span>
+            <Send className="w-3.5 h-3.5" />
           </Link>
 
           <Link
-            href="/pricing"
-            className="kx-btn-secondary w-full sm:w-auto justify-center text-xs sm:text-sm uppercase tracking-wider"
+            href="/services"
+            className="btn-nw btn-nw-ghost w-full sm:w-auto text-xs justify-center"
           >
-            <span>REQUEST A PROPOSAL</span>
+            <span>[ EXPLORE CAPABILITIES ]</span>
+            <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
 
-        <p className="mt-8 text-xs font-mono text-slate-500">
-          Typically responds within 24 business hours. No spam, no high-pressure pitch.
+        <p className="text-xs font-mono text-slate-500">
+          Typically responds within 24 business hours. Direct response from senior strategists.
         </p>
       </div>
     </section>
   );
 }
+

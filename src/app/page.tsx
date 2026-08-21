@@ -1,51 +1,49 @@
 import { HeroSection } from "@/components/sections/HeroSection";
 import { Marquee } from "@/components/ui/Marquee";
-import { StatsSection } from "@/components/sections/StatsSection";
+import { ProblemSection } from "@/components/sections/ProblemSection";
+import { ProblemSolutionMatrix } from "@/components/sections/ProblemSolutionMatrix";
 import { InteractiveServices } from "@/components/sections/InteractiveServices";
-import { FeaturedWorkSection } from "@/components/sections/FeaturedWorkSection";
-import { BeforeAfterSlider } from "@/components/ui/BeforeAfterSlider";
 import { ProcessSection } from "@/components/sections/ProcessSection";
-import { WhyUsSection } from "@/components/sections/WhyUsSection";
+import { FeaturedWorkSection } from "@/components/sections/FeaturedWorkSection";
+import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
+import { TrustCredibilitySection } from "@/components/sections/TrustCredibilitySection";
+import { FounderTrustSection } from "@/components/sections/FounderTrustSection";
 import { BlogPreviewSection } from "@/components/sections/BlogPreviewSection";
 import { CTASection } from "@/components/sections/CTASection";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Social Media Marketing & Digital Growth Agency",
+  title: "KRAXX Studio | International Digital Growth & Creative Technology Studio",
   description:
-    "KRAXX Studio helps brands grow through social media management, content strategy, community management, personal branding, and paid social.",
+    "We build the digital presence behind ambitious brands. Digital strategy, high-performance web experiences, brand identity, and content systems.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "KRAXX Studio | Social Media Marketing & Digital Growth",
+    title: "KRAXX Studio | International Digital Growth & Creative Studio",
     description:
-      "Social media marketing, content strategy, community management, personal branding, and digital growth by KRAXX Studio.",
+      "We build the digital presence behind ambitious brands. Digital strategy, high-performance web experiences, brand identity, and content systems.",
     url: "https://kraxxstudio.com/",
     type: "website",
   },
-}; 
+};
 
 export default function HomePage() {
   return (
     <>
       <HeroSection />
       <Marquee />
-      <StatsSection />
+      <ProblemSection />
+      <ProblemSolutionMatrix />
       <InteractiveServices />
-      <FeaturedWorkSection />
-      
-      {/* Before / After Slider Section */}
-      <section className="py-24 sm:py-32 bg-slate-950 border-t border-white/10 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <BeforeAfterSlider />
-        </div>
-      </section>
-
       <ProcessSection />
-      <WhyUsSection />
+      <FeaturedWorkSection />
+      <TrustCredibilitySection />
+      <TestimonialsSection />
+      <FounderTrustSection />
       <BlogPreviewSection />
       <CTASection />
     </>
   );
 }
+

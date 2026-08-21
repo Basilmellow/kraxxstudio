@@ -1,12 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { ArrowUpRight, Share2, Target, Sparkles, Users, UserCheck, TrendingUp, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ServiceItem } from "@/data/services";
 
-const ICON_MAP: Record<string, any> = {
+const ICON_MAP: Record<string, React.ElementType> = {
   Share2,
   Target,
   Sparkles,

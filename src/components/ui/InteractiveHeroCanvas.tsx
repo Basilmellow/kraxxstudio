@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { TrendingUp, MessageSquare, Zap, BarChart3 } from "lucide-react";
+import { TrendingUp, Zap, BarChart3 } from "lucide-react";
 import { InstagramIcon } from "@/components/ui/SocialIcons";
 
 export function InteractiveHeroCanvas() {

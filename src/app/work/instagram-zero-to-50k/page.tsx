@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft, ArrowUpRight, CheckCircle2, TrendingUp, Sparkles, Layers } from "lucide-react";
+import { ArrowLeft, CheckCircle2, TrendingUp, Layers } from "lucide-react";
 import { CASE_STUDIES } from "@/data/caseStudies";
 import { CTASection } from "@/components/sections/CTASection";
 

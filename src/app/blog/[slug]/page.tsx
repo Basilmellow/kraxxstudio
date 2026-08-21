@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, Clock, Calendar, User, Share2, Sparkles, BookOpen } from "lucide-react";
+import { ArrowLeft, Clock, Calendar, User } from "lucide-react";
 import { BLOG_POSTS } from "@/data/blogPosts";
 import { ArticleJsonLd } from "@/components/ui/JsonLd";
 import { CTASection } from "@/components/sections/CTASection";

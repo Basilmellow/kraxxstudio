@@ -19,7 +19,7 @@ export default function TermsPage() {
 
           <h2 className="text-xl font-bold text-white">1. Agreement to Terms</h2>
           <p>
-            By accessing this website or engaging services provided by {SITE_CONFIG.fullName} ("KRAXX"), you agree to be bound by these Terms of Service.
+            By accessing this website or engaging services provided by {SITE_CONFIG.fullName} (&quot;KRAXX&quot;), you agree to be bound by these Terms of Service.
           </p>
 
           <h2 className="text-xl font-bold text-white">2. Studio Services & Scope</h2>

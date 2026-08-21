@@ -14,7 +14,7 @@ export function StatsSection() {
             PROVEN PERFORMANCE & REACH
           </span>
           <h2 className="text-3xl sm:text-5xl font-black text-white uppercase tracking-tight mt-2 leading-tight">
-            ATTENTION ISN'T THE GOAL. <br />
+            ATTENTION ISN&apos;T THE GOAL. <br />
             <span className="text-gradient-blue">IMPACT IS.</span>
           </h2>
           <p className="text-sm text-slate-300 mt-4 leading-relaxed">

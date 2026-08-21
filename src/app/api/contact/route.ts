@@ -46,11 +46,13 @@ export async function POST(req: NextRequest) {
       brand,
       email,
       website,
+      businessType,
+      problem,
+      goal,
+      timeline,
       message,
       services,
       budget,
-      // Honeypot field: real users never fill this in (it's hidden via CSS).
-      // Bots that auto-fill every field will trip it.
       hp_field_x7q,
     } = body ?? {};
 
@@ -59,17 +61,15 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ ok: true });
     }
 
-    // Server-side validation — never trust client-side `required` alone.
+    // Server-side validation
     if (
       typeof name !== "string" ||
       typeof email !== "string" ||
-      typeof message !== "string" ||
       !name.trim() ||
-      !email.trim() ||
-      !message.trim()
+      !email.trim()
     ) {
       return NextResponse.json(
-        { error: "Name, email, and project overview are required." },
+        { error: "Name and email are required fields." },
         { status: 400 }
       );
     }
@@ -82,7 +82,14 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    if (name.length > 200 || email.length > 200 || message.length > 5000) {
+    const fullMessage = (message && typeof message === "string") ? message : [
+      problem ? `Current Problem: ${problem}` : "",
+      goal ? `Target Goal: ${goal}` : "",
+      timeline ? `Timeline: ${timeline}` : "",
+      businessType ? `Business Profile: ${businessType}` : ""
+    ].filter(Boolean).join("\n") || "No additional notes provided.";
+
+    if (name.length > 200 || email.length > 200 || fullMessage.length > 5000) {
       return NextResponse.json(
         { error: "One or more fields exceed the maximum allowed length." },
         { status: 400 }
@@ -104,15 +111,17 @@ export async function POST(req: NextRequest) {
 
     const html = `
       <div style="font-family: sans-serif; line-height: 1.6;">
-        <h2>New Project Enquiry — KRAXX Studio</h2>
+        <h2>New Project Initiation Enquiry — KRAXX Studio</h2>
         <p><strong>Name:</strong> ${escapeHtml(name)}</p>
         <p><strong>Business / Brand:</strong> ${escapeHtml(brand || "—")}</p>
+        <p><strong>Business Profile:</strong> ${escapeHtml(businessType || "—")}</p>
         <p><strong>Email:</strong> ${escapeHtml(email)}</p>
         <p><strong>Website / Social:</strong> ${escapeHtml(website || "—")}</p>
         <p><strong>Services Requested:</strong> ${escapeHtml(servicesList)}</p>
         <p><strong>Budget:</strong> ${escapeHtml(budget || "—")}</p>
-        <p><strong>Project Overview:</strong></p>
-        <p style="white-space: pre-wrap;">${escapeHtml(message)}</p>
+        <p><strong>Timeline:</strong> ${escapeHtml(timeline || "—")}</p>
+        <p><strong>Project Overview & Objectives:</strong></p>
+        <p style="white-space: pre-wrap;">${escapeHtml(fullMessage)}</p>
       </div>
     `;
 

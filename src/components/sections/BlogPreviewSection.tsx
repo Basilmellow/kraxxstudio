@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight, BookOpen, Clock } from "lucide-react";
+import { ArrowUpRight, Clock } from "lucide-react";
 import { BLOG_POSTS } from "@/data/blogPosts";
 
 export function BlogPreviewSection() {

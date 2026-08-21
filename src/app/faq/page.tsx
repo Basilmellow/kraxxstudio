@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Search, Sparkles, HelpCircle } from "lucide-react";
+import { Search, Sparkles } from "lucide-react";
 import { MAIN_FAQS } from "@/data/faqs";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
 import { FAQJsonLd } from "@/components/ui/JsonLd";
@@ -80,7 +80,7 @@ export default function FAQPage() {
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 mb-16">
         {filteredFaqs.length === 0 ? (
           <div className="text-center py-12 text-slate-400 font-mono text-sm">
-            No FAQs matching "{searchQuery}". Try selecting another category or resetting search.
+            No FAQs matching &quot;{searchQuery}&quot;. Try selecting another category or resetting search.
           </div>
         ) : (
           <FAQAccordion items={filteredFaqs} />
