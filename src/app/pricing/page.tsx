@@ -23,7 +23,7 @@ const PRICING_TIERS = [
   {
     name: "STARTER ENGINE",
     tagline: "For businesses building consistency & visual authority.",
-    rangeIndicator: "Proposal Basis / ~$1,000 – $2,500/mo",
+    rangeIndicator: "Proposal Basis / ~$500 – $1,200/mo",
     popular: false,
     badge: "FOUNDATION SYSTEM",
     description: "Designed for growing brands that need an elevated visual identity, Next.js web presence, and baseline digital content strategy.",
@@ -40,7 +40,7 @@ const PRICING_TIERS = [
   {
     name: "GROWTH ENGINE",
     tagline: "For scaling brands focused on pipeline & category leadership.",
-    rangeIndicator: "Proposal Basis / ~$2,500 – $5,000/mo",
+    rangeIndicator: "Proposal Basis / ~$1,200 – $2,800/mo",
     popular: true,
     badge: "RECOMMENDED",
     description: "Our flagship growth retainer combining custom web architecture, short-form video editing, content distribution, executive positioning, and lead conversion.",
@@ -58,7 +58,7 @@ const PRICING_TIERS = [
   {
     name: "CUSTOM ENTERPRISE",
     tagline: "For established businesses needing full digital operations.",
-    rangeIndicator: "Custom Quote",
+    rangeIndicator: "Proposal Basis / ~$3,000 – $6,000/mo",
     popular: false,
     badge: "FULL STUDIO UNIT",
     description: "End-to-end dedicated creative and engineering operations covering web platform development, brand repositioning, paid acquisition, and custom SLA.",

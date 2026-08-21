@@ -96,12 +96,12 @@ export function FeaturedWorkSection() {
                     transition={{ duration: 0.4, delay: idx * 0.1 }}
                     className="flex gap-4 items-start font-mono text-xs"
                   >
-                    <div className="w-12 h-10 rounded-lg bg-purple-500/20 border border-purple-500/30 flex items-center justify-center font-bold text-purple-300 shrink-0">
+                    <div className="min-w-[76px] px-2.5 py-1.5 rounded-lg bg-purple-500/20 border border-purple-500/30 flex items-center justify-center font-bold text-purple-300 shrink-0 text-[11px] whitespace-nowrap">
                       {step.label}
                     </div>
-                    <div>
-                      <p className="font-bold text-white">{step.detail.split(":")[0]}</p>
-                      <p className="text-[11px] text-slate-400 font-light mt-0.5">{step.detail.split(":")[1] || step.detail}</p>
+                    <div className="space-y-0.5">
+                      <p className="font-bold text-white text-xs">{step.detail.split(":")[0]}</p>
+                      <p className="text-[11px] text-slate-400 font-light leading-relaxed">{step.detail.split(":")[1] || step.detail}</p>
                     </div>
                   </motion.div>
                 ))}

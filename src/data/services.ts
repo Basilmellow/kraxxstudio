@@ -151,48 +151,8 @@ export const STUDIO_CAPABILITIES: CapabilityPillar[] = [
 
 export const SERVICES_DATA: ServiceItem[] = [
   {
-    id: "web-digital-experience",
-    number: "01",
-    title: "WEB & DIGITAL EXPERIENCE",
-    slug: "web-digital-experience",
-    tagline: "Build high-converting business websites and premium web applications.",
-    summary: "Engineering-grade websites, SaaS landing pages, and restaurant portals designed to look expensive and convert visitors.",
-    description: "Your website is your primary international storefront. We design and engineer modern, responsive web experiences with crisp visual hierarchy, fast performance, and conversion-focused UX architecture.",
-    problem: "Most business websites look outdated, load slowly, and fail to convert visitors into qualified leads or customers.",
-    solution: "We build custom, high-performance digital experiences powered by Next.js and modern UX systems—ensuring instant speed, high conversion paths, and flawless responsive layouts.",
-    platforms: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Custom CMS"],
-    includes: [
-      "Custom UI/UX interface design & dynamic wireframing",
-      "Mobile-first responsive engineering & performance tuning",
-      "SEO-ready page architecture & meta structure",
-      "Conversion tracking integration & analytics setup",
-      "Custom interactive components & micro-animations",
-      "Content management system (CMS) integration"
-    ],
-    deliverables: [
-      "Custom Production-Ready Web Application",
-      "Mobile & Desktop Responsive Breakpoint Audit",
-      "Figma UI Component Design System",
-      "Core Web Vitals Performance Optimization",
-      "Integrated Contact & Lead Capture Workflow"
-    ],
-    process: [
-      { step: "01", title: "UX Architecture", desc: "We map user journeys, page hierarchy, and conversion goals before writing code." },
-      { step: "02", title: "Visual Engineering", desc: "We build responsive layouts with KRAXX design precision, smooth motion, and crisp typography." },
-      { step: "03", title: "Performance & SEO", desc: "We tune Core Web Vitals, implement structured data, and optimize image assets." },
-      { step: "04", title: "Launch & Analytics", desc: "We deploy on global CDN edge networks with real-time conversion monitoring." }
-    ],
-    faqs: [
-      { question: "What technologies do you use for website development?", answer: "We build with Next.js, React, TypeScript, and modern CSS—the same tech stack used by leading international tech companies." },
-      { question: "Can you redesign our existing website without breaking SEO?", answer: "Yes. We preserve all canonical URLs, redirect structures, meta data, and indexed pages." }
-    ],
-    heroBadge: "Digital Experience Engineering",
-    iconName: "Globe",
-    capabilityCategory: "WEB & DIGITAL EXPERIENCE"
-  },
-  {
     id: "content-strategy",
-    number: "02",
+    number: "01",
     title: "DIGITAL & CONTENT STRATEGY",
     slug: "content-strategy",
     tagline: "Turn random posting into a structured, revenue-aligned digital growth engine.",
@@ -231,9 +191,89 @@ export const SERVICES_DATA: ServiceItem[] = [
     capabilityCategory: "DIGITAL STRATEGY"
   },
   {
-    id: "social-media-management",
+    id: "web-digital-experience",
+    number: "02",
+    title: "WEB & DIGITAL EXPERIENCE",
+    slug: "web-digital-experience",
+    tagline: "Build high-converting business websites and premium web applications.",
+    summary: "Engineering-grade websites, SaaS landing pages, and restaurant portals designed to look expensive and convert visitors.",
+    description: "Your website is your primary international storefront. We design and engineer modern, responsive web experiences with crisp visual hierarchy, fast performance, and conversion-focused UX architecture.",
+    problem: "Most business websites look outdated, load slowly, and fail to convert visitors into qualified leads or customers.",
+    solution: "We build custom, high-performance digital experiences powered by Next.js and modern UX systems—ensuring instant speed, high conversion paths, and flawless responsive layouts.",
+    platforms: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Custom CMS"],
+    includes: [
+      "Custom UI/UX interface design & dynamic wireframing",
+      "Mobile-first responsive engineering & performance tuning",
+      "SEO-ready page architecture & meta structure",
+      "Conversion tracking integration & analytics setup",
+      "Custom interactive components & micro-animations",
+      "Content management system (CMS) integration"
+    ],
+    deliverables: [
+      "Custom Production-Ready Web Application",
+      "Mobile & Desktop Responsive Breakpoint Audit",
+      "Figma UI Component Design System",
+      "Core Web Vitals Performance Optimization",
+      "Integrated Contact & Lead Capture Workflow"
+    ],
+    process: [
+      { step: "01", title: "UX Architecture", desc: "We map user journeys, page hierarchy, and conversion goals before writing code." },
+      { step: "02", title: "Visual Engineering", desc: "We build responsive layouts with KRAXX design precision, smooth motion, and crisp typography." },
+      { step: "03", title: "Performance & SEO", desc: "We tune Core Web Vitals, implement structured data, and optimize image assets." },
+      { step: "04", title: "Launch & Analytics", desc: "We deploy on global CDN edge networks with real-time conversion monitoring." }
+    ],
+    faqs: [
+      { question: "What technologies do you use for website development?", answer: "We build with Next.js, React, TypeScript, and modern CSS—the same tech stack used by leading international tech companies." },
+      { question: "Can you redesign our existing website without breaking SEO?", answer: "Yes. We preserve all canonical URLs, redirect structures, meta data, and indexed pages." }
+    ],
+    heroBadge: "Digital Experience Engineering",
+    iconName: "Globe",
+    capabilityCategory: "WEB & DIGITAL EXPERIENCE"
+  },
+  {
+    id: "content-creation",
     number: "03",
-    title: "SOCIAL MEDIA MANAGEMENT",
+    title: "BRAND & VISUAL IDENTITY",
+    slug: "content-creation",
+    tagline: "Create high-impact visual content engineered for modern feed mechanics.",
+    summary: "Sleek carousels, short-form video editing, visual graphics, and editorial copy engineered for attention retention.",
+    description: "In modern feeds, design and pacing determine retention. We produce eye-catching visual content—from high-converting carousels and sleek motion graphics to polished short-form Reels and video edits tailored for thumb-stopping clarity.",
+    problem: "Standard stock visuals and generic templates get ignored in crowded feeds, lowering algorithm distribution and brand perception.",
+    solution: "We craft custom visual assets, motion typography, high-retention video edits, and editorial layouts designed specifically to capture seconds 0-3 and drive high save/share rates.",
+    platforms: ["Instagram Reels", "TikTok", "YouTube Shorts", "LinkedIn Carousels", "X Visuals"],
+    includes: [
+      "Short-form video editing (pacing, captions, sound design)",
+      "High-converting multi-slide carousels & infographics",
+      "Brand-aligned social graphics & visual templates",
+      "Story highlights & interactive story creative suites",
+      "Copywriting optimized for engagement & conversion",
+      "Motion graphics & animated text overlays"
+    ],
+    deliverables: [
+      "Monthly Batch of Short-Form Edited Videos",
+      "High-Resolution Carousel & Infographic Decks",
+      "Custom Editable Figma / Illustrator Templates",
+      "Engaging Caption Scripts & Hook Options",
+      "Asset Export Bundles Ready for Multi-Format Publishing"
+    ],
+    process: [
+      { step: "01", title: "Creative Briefing", desc: "We align on visual standards, color accents, motion styles, and brand voice guidelines." },
+      { step: "02", title: "Production & Editing", desc: "Our team designs graphics, formats slides, edits video cuts, and applies retention dynamics." },
+      { step: "03", title: "Review & Polish", desc: "Assets undergo quality assurance for typo checks, export resolution, and mobile framing." },
+      { step: "04", title: "Delivery & Asset Vault", desc: "Approved files are delivered in structured cloud folders formatted for instant publishing." }
+    ],
+    faqs: [
+      { question: "Do we need to send raw video footage?", answer: "If short-form video is required, you can send raw clips or smartphone video. We handle script structure, editing, sound design, and motion captions." },
+      { question: "What design formats do you deliver?", answer: "We deliver MP4 (for Reels/Shorts), high-res PNG/JPG, PDF (for LinkedIn carousels), and source vector assets if requested." }
+    ],
+    heroBadge: "Visual Asset Studio",
+    iconName: "Sparkles",
+    capabilityCategory: "BRAND & VISUAL IDENTITY"
+  },
+  {
+    id: "social-media-management",
+    number: "04",
+    title: "CONTENT & SOCIAL ENGINE",
     slug: "social-media-management",
     tagline: "Build and manage a consistent digital presence across relevant platforms.",
     summary: "Complete channel management that turns passive posting into an active, high-impact growth engine.",
@@ -272,87 +312,8 @@ export const SERVICES_DATA: ServiceItem[] = [
     capabilityCategory: "CONTENT & SOCIAL"
   },
   {
-    id: "content-creation",
-    number: "04",
-    title: "CONTENT & VISUAL ASSET CREATION",
-    slug: "content-creation",
-    tagline: "Create high-impact visual content engineered for modern feed mechanics.",
-    summary: "Sleek carousels, short-form video editing, visual graphics, and editorial copy engineered for attention retention.",
-    description: "In modern feeds, design and pacing determine retention. We produce eye-catching visual content—from high-converting carousels and sleek motion graphics to polished short-form Reels and video edits tailored for thumb-stopping clarity.",
-    problem: "Standard stock visuals and generic templates get ignored in crowded feeds, lowering algorithm distribution and brand perception.",
-    solution: "We craft custom visual assets, motion typography, high-retention video edits, and editorial layouts designed specifically to capture seconds 0-3 and drive high save/share rates.",
-    platforms: ["Instagram Reels", "TikTok", "YouTube Shorts", "LinkedIn Carousels", "X Visuals"],
-    includes: [
-      "Short-form video editing (pacing, captions, sound design)",
-      "High-converting multi-slide carousels & infographics",
-      "Brand-aligned social graphics & visual templates",
-      "Story highlights & interactive story creative suites",
-      "Copywriting optimized for engagement & conversion",
-      "Motion graphics & animated text overlays"
-    ],
-    deliverables: [
-      "Monthly Batch of Short-Form Edited Videos",
-      "High-Resolution Carousel & Infographic Decks",
-      "Custom Editable Figma / Illustrator Templates",
-      "Engaging Caption Scripts & Hook Options",
-      "Asset Export Bundles Ready for Multi-Format Publishing"
-    ],
-    process: [
-      { step: "01", title: "Creative Briefing", desc: "We align on visual standards, color accents, motion styles, and brand voice guidelines." },
-      { step: "02", title: "Production & Editing", desc: "Our team designs graphics, formats slides, edits video cuts, and applies retention dynamics." },
-      { step: "03", title: "Review & Polish", desc: "Assets undergo quality assurance for typo checks, export resolution, and mobile framing." },
-      { step: "04", title: "Delivery & Asset Vault", desc: "Approved files are delivered in structured cloud folders formatted for instant publishing." }
-    ],
-    faqs: [
-      { question: "Do we need to send raw video footage?", answer: "If short-form video is required, you can send raw clips or smartphone video. We handle script structure, editing, sound design, and motion captions." },
-      { question: "What design formats do you deliver?", answer: "We deliver MP4 (for Reels/Shorts), high-res PNG/JPG, PDF (for LinkedIn carousels), and source vector assets if requested." }
-    ],
-    heroBadge: "Visual Asset Studio",
-    iconName: "Sparkles",
-    capabilityCategory: "BRAND & VISUAL IDENTITY"
-  },
-  {
-    id: "community-management",
-    number: "05",
-    title: "COMMUNITY & AUDIENCE ECOSYSTEMS",
-    slug: "community-management",
-    tagline: "Turn casual passive followers into an active, loyal brand community.",
-    summary: "Humanized comment moderation, direct message nurturing, and Discord/social group management that builds long-term retention.",
-    description: "Followers are just numbers until you engage them. Our community management team monitors comments, responds to incoming DMs, moderates Discord servers, and proactively builds relationships with key creators and potential clients.",
-    problem: "Unanswered comments and ignored DMs degrade trust, signal brand inactivity, and kill algorithm boost opportunities.",
-    solution: "We implement structured response protocols, daily inbox triage, and active community moderation that turns interactions into brand advocacy and direct sales conversations.",
-    platforms: ["Instagram DMs", "LinkedIn Comments", "Discord", "X / Twitter", "Community Hubs"],
-    includes: [
-      "Daily comment monitoring & brand-aligned responses",
-      "Direct message (DM) triage & warm lead escalation",
-      "Discord community server moderation & onboarding",
-      "Proactive outbound engagement with target accounts",
-      "Spam, troll, and toxic content filtering protocol",
-      "Community feedback aggregation for product/service insights"
-    ],
-    deliverables: [
-      "Daily Community Triage (7 Days / Week Coverage Options)",
-      "Standard Operating Playbook for FAQ & Escalations",
-      "Discord Roles, Channels & Event Moderation Blueprint",
-      "Monthly Community Sentiment & Lead Escalation Log"
-    ],
-    process: [
-      { step: "01", title: "Brand Voice Protocol", desc: "We define response tone, escalation rules, and brand boundary parameters." },
-      { step: "02", title: "Daily Ingestion", desc: "Our moderators review incoming comments and DMs at scheduled peak activity intervals." },
-      { step: "03", title: "Lead Routing", desc: "Sales or high-intent business inquiries in DMs are tagged and routed immediately." },
-      { step: "04", title: "Sentiment Insights", desc: "We track recurring user questions to feed future content creation." }
-    ],
-    faqs: [
-      { question: "How do you ensure responses sound authentic to our brand?", answer: "We draft a comprehensive Community Playbook with approved voice guidelines, key term lexicons, and escalation logic." },
-      { question: "Can you manage Discord community channels?", answer: "Yes. We configure channel permissions, bot security, role assignments, and daily chat moderation." }
-    ],
-    heroBadge: "Community Engagement",
-    iconName: "Users",
-    capabilityCategory: "CONTENT & SOCIAL"
-  },
-  {
     id: "personal-branding",
-    number: "06",
+    number: "05",
     title: "PERSONAL BRAND & FOUNDER POSITIONING",
     slug: "personal-branding",
     tagline: "Position founders, executives and leaders as category authorities.",
@@ -391,7 +352,7 @@ export const SERVICES_DATA: ServiceItem[] = [
   },
   {
     id: "paid-social",
-    number: "07",
+    number: "06",
     title: "GROWTH, SEO & PAID CAMPAIGNS",
     slug: "paid-social",
     tagline: "Amplify reach with technical SEO and disciplined performance advertising.",
@@ -428,6 +389,45 @@ export const SERVICES_DATA: ServiceItem[] = [
     heroBadge: "Paid & Search Growth",
     iconName: "TrendingUp",
     capabilityCategory: "GROWTH & ANALYTICS"
+  },
+  {
+    id: "community-management",
+    number: "07",
+    title: "COMMUNITY & AUDIENCE ECOSYSTEMS",
+    slug: "community-management",
+    tagline: "Turn casual passive followers into an active, loyal brand community.",
+    summary: "Humanized comment moderation, direct message nurturing, and Discord/social group management that builds long-term retention.",
+    description: "Followers are just numbers until you engage them. Our community management team monitors comments, responds to incoming DMs, moderates Discord servers, and proactively builds relationships with key creators and potential clients.",
+    problem: "Unanswered comments and ignored DMs degrade trust, signal brand inactivity, and kill algorithm boost opportunities.",
+    solution: "We implement structured response protocols, daily inbox triage, and active community moderation that turns interactions into brand advocacy and direct sales conversations.",
+    platforms: ["Instagram DMs", "LinkedIn Comments", "Discord", "X / Twitter", "Community Hubs"],
+    includes: [
+      "Daily comment monitoring & brand-aligned responses",
+      "Direct message (DM) triage & warm lead escalation",
+      "Discord community server moderation & onboarding",
+      "Proactive outbound engagement with target accounts",
+      "Spam, troll, and toxic content filtering protocol",
+      "Community feedback aggregation for product/service insights"
+    ],
+    deliverables: [
+      "Daily Community Triage (7 Days / Week Coverage Options)",
+      "Standard Operating Playbook for FAQ & Escalations",
+      "Discord Roles, Channels & Event Moderation Blueprint",
+      "Monthly Community Sentiment & Lead Escalation Log"
+    ],
+    process: [
+      { step: "01", title: "Brand Voice Protocol", desc: "We define response tone, escalation rules, and brand boundary parameters." },
+      { step: "02", title: "Daily Ingestion", desc: "Our moderators review incoming comments and DMs at scheduled peak activity intervals." },
+      { step: "03", title: "Lead Routing", desc: "Sales or high-intent business inquiries in DMs are tagged and routed immediately." },
+      { step: "04", title: "Sentiment Insights", desc: "We track recurring user questions to feed future content creation." }
+    ],
+    faqs: [
+      { question: "How do you ensure responses sound authentic to our brand?", answer: "We draft a comprehensive Community Playbook with approved voice guidelines, key term lexicons, and escalation logic." },
+      { question: "Can you manage Discord community channels?", answer: "Yes. We configure channel permissions, bot security, role assignments, and daily chat moderation." }
+    ],
+    heroBadge: "Community Engagement",
+    iconName: "Users",
+    capabilityCategory: "CONTENT & SOCIAL"
   }
 ];
 

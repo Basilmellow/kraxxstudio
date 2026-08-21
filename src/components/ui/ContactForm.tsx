@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { Send, CheckCircle, Loader2, HelpCircle, ShieldCheck } from "lucide-react";
+import { useState, useRef, useEffect } from "react";
+import { Send, CheckCircle, Loader2, HelpCircle, ShieldCheck, ChevronDown, Check } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const SERVICES_OPTIONS = [
@@ -25,7 +25,7 @@ const BUSINESS_TYPES = [
   "Expanding Local Business",
 ];
 
-const BUDGET_OPTIONS = ["$1,000 – $2,500 / mo", "$2,500 – $5,000 / mo", "$5,000 – $10,000 / mo", "Custom Web Project ($3,000+)"];
+const BUDGET_OPTIONS = ["$500 – $1,200 / mo", "$1,200 – $2,500 / mo", "$2,500 – $5,000 / mo", "Custom Project ($5,000+)"];
 const TIMELINE_OPTIONS = ["Immediate (Within 2 weeks)", "1 Month", "2-3 Months", "Planning Stage"];
 
 export function ContactForm() {
@@ -42,10 +42,22 @@ export function ContactForm() {
   });
 
   const [selectedServices, setSelectedServices] = useState<string[]>(["Digital Strategy & Audit"]);
-  const [selectedBudget, setSelectedBudget] = useState<string>("$2,500 – $5,000 / mo");
+  const [selectedBudget, setSelectedBudget] = useState<string>("$1,200 – $2,500 / mo");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
   const [honeypot, setHoneypot] = useState("");
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsDropdownOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   const toggleService = (service: string) => {
     if (selectedServices.includes(service)) {
@@ -232,23 +244,54 @@ export function ContactForm() {
               </div>
             </div>
 
-            {/* Business Type Dropdown */}
-            <div className="flex flex-col gap-2 font-mono text-xs">
-              <label htmlFor="businessType" className="uppercase tracking-wider text-slate-300">
+            {/* Custom Styled Business Type Dropdown */}
+            <div className="flex flex-col gap-2 font-mono text-xs relative" ref={dropdownRef}>
+              <label className="uppercase tracking-wider text-slate-300">
                 Business Profile / Vertical
               </label>
-              <select
-                id="businessType"
-                value={formData.businessType}
-                onChange={(e) => setFormData({ ...formData, businessType: e.target.value })}
-                className="w-full px-4 py-3 rounded-xl bg-bg-dark border border-white/10 text-white text-sm focus:outline-none focus:border-purple-500 transition-colors cursor-pointer"
+              <button
+                type="button"
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                className="w-full px-4 py-3 rounded-xl bg-bg-dark border border-white/10 text-white text-sm flex items-center justify-between hover:border-purple-500/50 transition-colors text-left focus:outline-none focus:border-purple-500"
+                aria-expanded={isDropdownOpen}
               >
-                {BUSINESS_TYPES.map((type) => (
-                  <option key={type} value={type} className="bg-bg-dark text-white">
-                    {type}
-                  </option>
-                ))}
-              </select>
+                <span>{formData.businessType}</span>
+                <ChevronDown className={`w-4 h-4 text-purple-400 transition-transform duration-200 ${isDropdownOpen ? "rotate-180" : ""}`} />
+              </button>
+
+              <AnimatePresence>
+                {isDropdownOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -8 }}
+                    transition={{ duration: 0.15 }}
+                    className="absolute top-full left-0 right-0 mt-2 z-50 rounded-xl bg-bg-card border border-purple-500/30 shadow-2xl p-1.5 space-y-1 backdrop-blur-2xl overflow-hidden"
+                  >
+                    {BUSINESS_TYPES.map((type) => {
+                      const isSelected = formData.businessType === type;
+                      return (
+                        <button
+                          key={type}
+                          type="button"
+                          onClick={() => {
+                            setFormData({ ...formData, businessType: type });
+                            setIsDropdownOpen(false);
+                          }}
+                          className={`w-full px-3.5 py-2.5 rounded-lg text-xs font-mono text-left flex items-center justify-between transition-colors ${
+                            isSelected
+                              ? "bg-purple-600/25 text-purple-200 font-bold border border-purple-500/40"
+                              : "text-slate-300 hover:bg-white/5 hover:text-white"
+                          }`}
+                        >
+                          <span>{type}</span>
+                          {isSelected && <Check className="w-3.5 h-3.5 text-purple-400" />}
+                        </button>
+                      );
+                    })}
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
 
             {/* Service Selection Pills */}

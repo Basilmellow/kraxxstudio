@@ -20,10 +20,10 @@ export function CTASection() {
           Tell us about your business goals. We&apos;ll audit your current digital footprint and engineer the exact growth system you need.
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+        <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto relative z-20">
           <Link
             href="/contact"
-            className="btn-nw btn-nw-solid w-full sm:w-auto text-xs justify-center"
+            className="btn-nw btn-nw-solid w-full sm:w-auto text-xs justify-center cursor-pointer"
           >
             <span>[ START A PROJECT ]</span>
             <Send className="w-3.5 h-3.5" />
@@ -31,7 +31,7 @@ export function CTASection() {
 
           <Link
             href="/services"
-            className="btn-nw btn-nw-ghost w-full sm:w-auto text-xs justify-center"
+            className="btn-nw btn-nw-ghost w-full sm:w-auto text-xs justify-center cursor-pointer hover:border-purple-400"
           >
             <span>[ EXPLORE CAPABILITIES ]</span>
             <ArrowRight className="w-3.5 h-3.5" />
