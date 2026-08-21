@@ -23,7 +23,7 @@ export const SITE_CONFIG = {
     "Growth engines that compound"
   ],
   socialLinks: {
-    instagram: "https://instagram.com/kraxxstudio",
+    instagram: "https://instagram.com/kraxx_org",
     linkedin: "https://www.linkedin.com/company/kraxxstudio",
     twitter: "https://x.com/kraxxstudio",
     github: "https://github.com/Basilmellow",
